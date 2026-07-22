@@ -1,0 +1,709 @@
+﻿<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Téléchargez l'Application Alfa - iOS et Android</title>
+    <meta
+      name="description"
+      content="Téléchargez l'application gratuite Alfa sur l'App Store ou Google Play pour accéder à tous nos services en Guinée."
+    />
+    <link rel="canonical" href="https://www.alfa.com.gn/telechargement.html" />
+    <meta
+      property="og:title"
+      content="Téléchargez l'Application Alfa - iOS et Android"
+    />
+    <meta
+      property="og:description"
+      content="Téléchargez l'application gratuite Alfa sur l'App Store ou Google Play pour accéder à tous nos services en Guinée."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://www.alfa.com.gn/telechargement.html"
+    />
+    <meta property="og:site_name" content="Alfa" />
+    <meta
+      property="og:image"
+      content="https://www.alfa.com.gn/assets/og-image.jpg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .download-hero {
+        padding: 160px 0 80px;
+        background: var(--color-surface);
+        text-align: center;
+      }
+      .download-apps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        padding: 40px 0;
+      }
+      .app-download-card {
+        background: var(--color-background);
+        border-radius: var(--radius-lg);
+        padding: 40px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: var(--transition);
+      }
+      .app-download-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+      .app-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        background: var(--color-primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow-sm);
+      }
+      .app-icon.merchant {
+        background: var(--color-merchant);
+      }
+      .app-icon.driver {
+        background: var(--color-driver);
+      }
+      .app-icon svg {
+        width: 40px;
+        height: 40px;
+      }
+      .qr-box {
+        margin: 24px 0;
+        padding: 16px;
+        background: white;
+        border-radius: var(--radius-md);
+        border: 1px dashed #cbd5e1;
+      }
+      .qr-placeholder-lg {
+        width: 120px;
+        height: 120px;
+        background: #f1f5f9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+      .download-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+      }
+      .btn-store {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding: 12px;
+        border-radius: var(--radius-md);
+        font-weight: 600;
+        background: var(--color-secondary);
+        color: white;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+      }
+      .btn-store:hover {
+        background: black;
+        color: white;
+      }
+      .btn-store.disabled {
+        background: #e2e8f0;
+        color: #94a3b8;
+        cursor: not-allowed;
+      }
+      #smart-banner {
+        display: none;
+        background: var(--gradient-primary);
+        color: white;
+        padding: 16px;
+        text-align: center;
+        font-weight: 600;
+        position: sticky;
+        top: 80px;
+        z-index: 999;
+      }
+      #smart-banner a {
+        text-decoration: underline;
+        margin-left: 12px;
+      }
+    </style>
+
+    <!-- Anti-Flash for Hash Links -->
+    <style>
+      html.mask-hash-loading body {
+        opacity: 0 !important;
+      }
+    </style>
+    <script>
+      if (window.location.hash && window.location.hash.length > 1) {
+        document.documentElement.classList.add("mask-hash-loading");
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            document.documentElement.classList.remove("mask-hash-loading");
+            document.body.style.transition = "opacity 0.2s ease-in";
+            document.body.style.opacity = "1";
+          }, 10);
+        });
+        // Sécurité
+        setTimeout(function () {
+          document.documentElement.classList.remove("mask-hash-loading");
+          document.body.style.opacity = "1";
+        }, 500);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- EN-TÊTE -->
+    <header class="header">
+      <div class="container nav-container">
+        <a
+          href="index.html"
+          class="logo"
+          style="display: flex; align-items: center; gap: 4px"
+          ><span class="logo-img-wrap"
+            ><img
+              src="assets/images/logo.png"
+              alt="logo"
+              class="header-logo-img" /></span
+          >alfa<span class="dot">.</span></a
+        >
+        <nav class="nav-links">
+          <a href="index.html">Accueil</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#fonctionnement">Voir comment ça marche</a>
+          <a href="index.html#partenaires">Partenaires</a>
+          <a href="aide.html">Aide</a>
+          <a href="contact.html">Contact</a>
+          <div class="nav-dropdown">
+            <button class="btn btn-outline nav-dropdown-btn">
+              Devenir partenaire
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="vertical-align: middle; margin-left: 4px"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            <div class="dropdown-content">
+              <a href="commercant.html">Commerçant</a>
+              <a href="chauffeur.html">Chauffeur</a>
+            </div>
+          </div>
+
+          <!-- Language Switcher -->
+          <div class="nav-dropdown lang-switcher" style="margin-right: 12px">
+            <button
+              class="btn btn-outline nav-dropdown-btn"
+              style="
+                padding: 0.5rem;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-weight: 600;
+              "
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                ></path>
+              </svg>
+              <span class="current-lang">FR</span>
+            </button>
+            <div class="dropdown-content lang-dropdown">
+              <a
+                href="#"
+                onclick="
+                  doGTranslate('fr|fr');
+                  return false;
+                "
+                title="Français"
+                >🇫🇷 Français</a
+              >
+              <a
+                href="#"
+                onclick="
+                  doGTranslate('fr|en');
+                  return false;
+                "
+                title="English"
+                >🇬🇧 English</a
+              >
+              <a
+                href="#"
+                onclick="
+                  doGTranslate('fr|zh-CN');
+                  return false;
+                "
+                title="Chinese"
+                >🇨🇳 中文</a
+              >
+            </div>
+          </div>
+          <!-- GTranslate Wrapper -->
+          <div id="google_translate_element2" style="display: none"></div>
+
+          <a href="telechargement.html" class="btn btn-primary"
+            >Télécharger l'app</a
+          >
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Ouvrir le menu">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 12h18M3 6h18M3 18h18" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <!-- Smart Banner (JS injectera le contenu) -->
+    <div id="smart-banner"></div>
+    <main>
+      <section class="download-hero">
+        <div class="container">
+          <h1 class="section-title" style="margin-bottom: 24px">
+            Téléchargez <span>alfa</span>
+          </h1>
+          <p class="text-muted" style="max-width: 600px; margin: 0 auto">
+            Choisissez l'application qui correspond à vos besoins. Nos
+            applications sont officiellement vérifiées et disponibles sur les
+            plateformes sécurisées.
+          </p>
+          <div class="download-apps-grid">
+            <!-- App Client -->
+            <div class="app-download-card">
+              <div class="app-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+              <h3>alfa Client</h3>
+              <p class="text-muted mt-2">
+                Pour commander vos repas, faire vos courses ou réserver un
+                taxi/moto.
+              </p>
+              <div class="qr-box">
+                <div class="qr-placeholder-lg">QR Client</div>
+              </div>
+              <div class="download-buttons">
+                <a
+                  href="#"
+                  class="btn-store"
+                  onclick="smartLink('client', 'android')"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"
+                    />
+                  </svg>
+                  Android (Google Play)
+                </a>
+                <button class="btn-store disabled" title="Bientôt disponible">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                    />
+                  </svg>
+                  iOS (App Store - Bientôt)
+                </button>
+              </div>
+            </div>
+            <!-- App Commerçant -->
+            <div class="app-download-card">
+              <div class="app-icon merchant">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+              </div>
+              <h3>alfa Commerçant</h3>
+              <p class="text-muted mt-2">
+                Gérez votre boutique, vos commandes et vos revenus depuis votre
+                téléphone ou tablette.
+              </p>
+              <div class="qr-box">
+                <div class="qr-placeholder-lg">QR Commerçant</div>
+              </div>
+              <div class="download-buttons">
+                <a
+                  href="#"
+                  class="btn-store"
+                  onclick="smartLink('merchant', 'android')"
+                >
+                  Android (Google Play)
+                </a>
+              </div>
+            </div>
+            <!-- App Chauffeur -->
+            <div class="app-download-card">
+              <div class="app-icon driver">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+              </div>
+              <h3>alfa Chauffeur</h3>
+              <p class="text-muted mt-2">
+                Recevez des courses, effectuez des livraisons et gagnez de
+                l'argent avec votre véhicule.
+              </p>
+              <div class="qr-box">
+                <div class="qr-placeholder-lg">QR Chauffeur</div>
+              </div>
+              <div class="download-buttons">
+                <a
+                  href="#"
+                  class="btn-store"
+                  onclick="smartLink('driver', 'android')"
+                >
+                  Android (Google Play)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- PIED DE PAGE (Simplifié pour l'exemple) -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <h2
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+              "
+            >
+              <span class="footer-img-wrap"
+                ><img
+                  src="assets/images/logo.png"
+                  alt="logo"
+                  class="footer-logo-img" /></span
+              >alfa<span>.</span>
+            </h2>
+            <p>
+              Commandes de nourriture, Livraisons et Déplacements en Guinée.
+            </p>
+          </div>
+          <div class="footer-links-grid">
+            <div class="footer-column">
+              <h4>alfa</h4>
+              <a href="index.html#services">À propos d'alfa</a>
+              <a href="#">Actualités</a>
+              <a href="aide.html">Centre d'aide</a>
+              <a href="contact.html">Contact</a>
+              <a href="telechargement.html">Télécharger l'application</a>
+            </div>
+            <div class="footer-column">
+              <h4>Partenaires</h4>
+              <a href="commercant.html">Devenir commerçant</a>
+              <a href="chauffeur.html">Devenir chauffeur</a>
+            </div>
+            <div class="footer-column">
+              <h4>Légal</h4>
+              <a href="cgu.html">Conditions d'utilisation</a>
+              <a href="confidentialite.html">Politique de confidentialité</a>
+              <a href="cookies.html">Politique relative aux cookies</a>
+              <a href="mentions-legales.html">Mentions légales</a>
+            </div>
+            <div class="footer-column footer-contact">
+              <h4>Contact</h4>
+              <a href="tel:+224614878886"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="margin-top: -2px"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                614 87 88 86</a
+              >
+              <a href="mailto:alfa6ams@gmail.com"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="margin-top: -2px"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                alfa6ams@gmail.com</a
+              >
+              <div class="footer-social">
+                <a
+                  href="https://www.facebook.com/alfa/posts/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    /></svg
+                ></a>
+                <a
+                  href="https://www.instagram.com/alfa.guinee/reels/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg
+                ></a>
+                <a href="#" aria-label="X (Twitter)"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M4 4l11.73 16h5L9 4z" />
+                    <path d="M4 20l6.76-6.76" />
+                    <path d="M20 4l-6.76 6.76" /></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            alfa. Tous droits réservés.
+          </p>
+          <div class="service-status">
+            <span class="status-dot"></span>
+            Tous les systèmes sont opérationnels
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Script JS Global -->
+    <script src="js/main.js" defer></script>
+    <!-- Script Spécifique pour les Smart Links -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Détection de l'appareil
+        const userAgent =
+          navigator.userAgent || navigator.vendor || window.opera;
+        const isAndroid = /android/i.test(userAgent);
+        const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+        const smartBanner = document.getElementById("smart-banner");
+        if (isAndroid) {
+          smartBanner.innerHTML =
+            "Vous êtes sur Android. Téléchargez rapidement notre app sur Google Play ! <a href=\"#\" onclick=\"smartLink('client', 'android')\">Télécharger</a>";
+          smartBanner.style.display = "block";
+        } else if (isIOS) {
+          smartBanner.innerHTML =
+            "Vous êtes sur iOS. Notre application sera très bientôt disponible sur l'App Store.";
+          smartBanner.style.display = "block";
+          smartBanner.style.background = "#0F172A";
+        }
+      });
+      // Fonction de Smart Linking (simulation pour le prototype)
+      function smartLink(appType, platform) {
+        event.preventDefault();
+        // Ici, en production, on utiliserait Firebase Dynamic Links ou un lien universel.
+        // Le but est d'essayer d'ouvrir l'app (scheme), puis de retomber sur le store.
+        let scheme = "";
+        let storeUrl = "";
+        if (appType === "client") {
+          scheme = "alfa://";
+          storeUrl =
+            "https://play.google.com/store/apps/details?id=com.alfa.client";
+        } else if (appType === "merchant") {
+          scheme = "alfamerchant://";
+          storeUrl =
+            "https://play.google.com/store/apps/details?id=com.alfa.merchant";
+        } else if (appType === "driver") {
+          scheme = "alfadriver://";
+          storeUrl =
+            "https://play.google.com/store/apps/details?id=com.alfa.driver";
+        }
+        if (platform === "android") {
+          // Tentative d'ouverture de l'application via intent URI
+          // Fallback sur le store si l'app n'est pas trouvée
+          window.location.href = `intent://#Intent;scheme=${scheme.replace("://", "")};package=${storeUrl.split("id=")[1]};end`;
+          // Backup classique : rediriger vers le store après un court délai
+          setTimeout(() => {
+            window.location.href = storeUrl;
+          }, 1500);
+        }
+      }
+    </script>
+
+    <!-- GTranslate Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit2() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "fr", autoDisplay: false },
+          "google_translate_element2",
+        );
+      }
+      function doGTranslate(lang_pair) {
+        if (lang_pair.value) lang_pair = lang_pair.value;
+        if (lang_pair == "") return;
+        var lang = lang_pair.split("|")[1];
+        var teCombo;
+        var sel = document.getElementsByTagName("select");
+        for (var i = 0; i < sel.length; i++) {
+          if (sel[i].className.indexOf("goog-te-combo") != -1) {
+            teCombo = sel[i];
+            break;
+          }
+        }
+        if (
+          document.getElementById("google_translate_element2") == null ||
+          document.getElementById("google_translate_element2").innerHTML
+            .length == 0 ||
+          teCombo.length == 0 ||
+          teCombo.innerHTML.length == 0
+        ) {
+          setTimeout(function () {
+            doGTranslate(lang_pair);
+          }, 500);
+        } else {
+          teCombo.value = lang;
+          GTranslateFireEvent(teCombo, "change");
+          GTranslateFireEvent(teCombo, "change");
+          // Update all current-lang spans
+          const spans = document.querySelectorAll(".current-lang");
+          spans.forEach((span) => {
+            span.textContent = lang === "zh-CN" ? "ZH" : lang.toUpperCase();
+          });
+        }
+      }
+      function GTranslateFireEvent(element, event) {
+        try {
+          if (document.createEventObject) {
+            var evt = document.createEventObject();
+            element.fireEvent("on" + event, evt);
+          } else {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent(event, true, true);
+            element.dispatchEvent(evt);
+          }
+        } catch (e) {}
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"
+    ></script>
+  </body>
+</html>

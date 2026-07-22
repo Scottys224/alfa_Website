@@ -1,0 +1,1083 @@
+﻿<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Centre d'Aide Alfa - Support et FAQ</title>
+    <meta
+      name="description"
+      content="Besoin d'aide avec l'application Alfa ? Consultez notre centre d'aide, notre FAQ ou contactez le support client."
+    />
+    <link rel="canonical" href="https://www.alfa.com.gn/aide.html" />
+    <meta property="og:title" content="Centre d'Aide Alfa - Support et FAQ" />
+    <meta
+      property="og:description"
+      content="Besoin d'aide avec l'application Alfa ? Consultez notre centre d'aide, notre FAQ ou contactez le support client."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.alfa.com.gn/aide.html" />
+    <meta property="og:site_name" content="Alfa" />
+    <meta
+      property="og:image"
+      content="https://www.alfa.com.gn/assets/og-image.jpg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .help-hero {
+        padding: 140px 0 60px;
+        background: var(--color-surface);
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .search-bar {
+        max-width: 600px;
+        margin: 32px auto 0;
+        position: relative;
+      }
+      .search-bar input {
+        width: 100%;
+        padding: 16px 24px 16px 48px;
+        border-radius: 30px;
+        border: 1px solid #cbd5e1;
+        font-size: 1.1rem;
+        box-shadow: var(--shadow-sm);
+      }
+      .search-bar svg {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-muted);
+      }
+      .help-content {
+        padding: 60px 0;
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+      .help-sidebar {
+        position: sticky;
+        top: 100px;
+        max-height: calc(100vh - 120px); /* Hauteur maximale selon l'écran */
+        overflow-y: auto; /* Active le défilement indépendant */
+        background-color: #f8fafc; /* Fond très clair pour le différencier */
+        padding: 24px;
+        border-radius: 16px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Légère ombre pour le faire ressortir */
+      }
+      /* Personnalisation de la petite barre de défilement du menu */
+      .help-sidebar::-webkit-scrollbar {
+        width: 5px;
+      }
+      .help-sidebar::-webkit-scrollbar-track {
+        background: transparent;
+        margin: 10px 0;
+      }
+      .help-sidebar::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1;
+        border-radius: 10px;
+      }
+      /* Titre indicatif pour le menu */
+      .help-sidebar::before {
+        content: "Menu d'Aide";
+        display: block;
+        font-weight: 700;
+        color: #334155;
+        margin-bottom: 16px;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .help-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .help-nav a {
+        padding: 10px 16px;
+        border-radius: var(--radius-md);
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+      .help-nav a.active,
+      .help-nav a:hover {
+        background: rgba(79, 70, 229, 0.1);
+        color: var(--color-primary);
+      }
+      .help-category {
+        margin-bottom: 48px;
+      }
+      .help-category h2 {
+        font-size: 1.8rem;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      .article-card {
+        background: white;
+        padding: 24px;
+        border-radius: var(--radius-md);
+        border: 1px solid #e2e8f0;
+        margin-bottom: 16px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      .article-card:hover {
+        box-shadow: var(--shadow-sm);
+        border-color: var(--color-primary);
+      }
+      .article-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        color: var(--color-primary);
+      }
+      .article-card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+      @media (max-width: 768px) {
+        .help-content {
+          grid-template-columns: 1fr;
+        }
+        .help-sidebar {
+          position: static;
+          margin-bottom: 32px;
+        }
+      }
+      mark {
+        background-color: #fef08a;
+        color: #0f172a;
+        padding: 0 2px;
+        border-radius: 2px;
+        font-weight: 500;
+      }
+    </style>
+
+    <!-- Anti-Flash for Hash Links -->
+    <style>
+      html.mask-hash-loading body {
+        opacity: 0 !important;
+      }
+    </style>
+    <script>
+      if (window.location.hash && window.location.hash.length > 1) {
+        document.documentElement.classList.add("mask-hash-loading");
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            document.documentElement.classList.remove("mask-hash-loading");
+            document.body.style.transition = "opacity 0.2s ease-in";
+            document.body.style.opacity = "1";
+          }, 10);
+        });
+        // Sécurité
+        setTimeout(function () {
+          document.documentElement.classList.remove("mask-hash-loading");
+          document.body.style.opacity = "1";
+        }, 500);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- EN-TÊTE -->
+    <header class="header">
+      <div class="container nav-container">
+        <a
+          href="index.html"
+          class="logo"
+          style="display: flex; align-items: center; gap: 4px"
+          ><span class="logo-img-wrap"
+            ><img
+              src="assets/images/logo.png"
+              alt="logo"
+              class="header-logo-img" /></span
+          >alfa<span class="dot">.</span></a
+        >
+        <nav class="nav-links">
+          <a href="index.html">Accueil</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#fonctionnement">Voir comment ça marche</a>
+          <a href="index.html#partenaires">Partenaires</a>
+          <a href="aide.html">Aide</a>
+          <a href="contact.html">Contact</a>
+          <div class="nav-dropdown">
+            <button class="btn btn-outline nav-dropdown-btn">
+              Devenir partenaire
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="vertical-align: middle; margin-left: 4px"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            <div class="dropdown-content">
+              <a href="commercant.html">Commerçant</a>
+              <a href="chauffeur.html">Chauffeur</a>
+            </div>
+          </div>
+
+          <!-- Language Switcher -->
+          <div class="nav-dropdown lang-switcher" style="margin-right: 12px">
+            <button
+              class="btn btn-outline nav-dropdown-btn"
+              style="
+                padding: 0.5rem;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-weight: 600;
+              "
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                ></path>
+              </svg>
+              <span class="current-lang">FR</span>
+            </button>
+            <div class="dropdown-content lang-dropdown">
+              <a
+                href="#"
+                onclick="
+                  doGTranslate('fr|fr');
+                  return false;
+                "
+                title="Français"
+                >🇫🇷 Français</a
+              >
+              <a
+                href="#"
+                onclick="
+                  doGTranslate('fr|en');
+                  return false;
+                "
+                title="English"
+                >🇬🇧 English</a
+              >
+              <a
+                href="#"
+                onclick="
+                  doGTranslate('fr|zh-CN');
+                  return false;
+                "
+                title="Chinese"
+                >🇨🇳 中文</a
+              >
+            </div>
+          </div>
+          <!-- GTranslate Wrapper -->
+          <div id="google_translate_element2" style="display: none"></div>
+
+          <a href="telechargement.html" class="btn btn-primary"
+            >Télécharger l'app</a
+          >
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Ouvrir le menu">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 12h18M3 6h18M3 18h18" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="help-hero">
+        <div class="container">
+          <h1>Comment pouvons-nous vous aider ?</h1>
+          <div class="search-bar">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Rechercher une réponse (ex: mot de passe oublié)..."
+            />
+          </div>
+        </div>
+      </section>
+      <section class="container help-content">
+        <aside class="help-sidebar">
+          <nav class="help-nav">
+            <a href="#guide-client" class="active">Guide Client</a>
+            <a href="#guide-commercant">Guide Commerçant</a>
+            <a href="#guide-chauffeur">Guide Chauffeur</a>
+            <a href="#compte">Gestion du compte</a>
+            <a href="#paiements">Paiements</a>
+            <a href="#commandes">Commandes et Courses</a>
+            <a href="#securite">Sécurité</a>
+            <a href="#technique">Problèmes techniques</a>
+          </nav>
+        </aside>
+        <div class="help-articles" id="helpArticles">
+          <div id="guide-client" class="help-category">
+            <h2>Guide Client</h2>
+            <div class="article-card">
+              <h3>Comment créer un compte ou se connecter ?</h3>
+              <p style="margin-bottom: 8px">
+                La création de votre compte Client est rapide et sécurisée :
+              </p>
+              <ul
+                style="
+                  padding-left: 20px;
+                  margin-bottom: 0;
+                  color: var(--text-muted);
+                  font-size: 0.95rem;
+                  line-height: 1.6;
+                "
+              >
+                <li>
+                  <strong>1.</strong> Téléchargez l'application
+                  <b>alfa Client</b> sur Android ou iOS.
+                </li>
+                <li>
+                  <strong>2.</strong> Ouvrez l'application et appuyez sur
+                  <b>"S'inscrire"</b>.
+                </li>
+                <li>
+                  <strong>3.</strong> Entrez votre
+                  <b>numéro de téléphone</b> (sans le code pays si déjà
+                  sélectionné).
+                </li>
+                <li>
+                  <strong>4.</strong> Saisissez le
+                  <b>code SMS à 4 chiffres</b> reçu pour vérifier votre
+                  identité.
+                </li>
+                <li>
+                  <strong>5.</strong> Renseignez votre prénom, nom, et c'est
+                  parti pour commander !
+                </li>
+              </ul>
+            </div>
+            <div class="article-card">
+              <h3>Comment commander un repas ?</h3>
+              <p>
+                Ouvrez l'application Client, sélectionnez la section Nourriture.
+                Parcourez les restaurants ou utilisez la barre de recherche.
+                Choisissez vos plats, ajoutez-les au panier, vérifiez l'adresse
+                de livraison et validez votre paiement.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Comment commander un taxi ou une moto ?</h3>
+              <p>
+                Sur l'écran d'accueil, cliquez sur "Course". L'application
+                détecte votre position (point A). Entrez votre destination
+                (point B). Choisissez le type de véhicule (Moto ou Auto) pour
+                voir le prix exact, puis confirmez la commande.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Puis-je annuler une commande ou une course ?</h3>
+              <p>
+                Oui. Pour une course, vous pouvez annuler sans frais avant que
+                le chauffeur n'arrive. Pour la nourriture, l'annulation est
+                possible uniquement si le restaurant n'a pas encore commencé la
+                préparation de votre commande.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Comment utiliser un code promo ?</h3>
+              <p>
+                Avant de valider votre panier ou votre course, appuyez sur
+                "Ajouter un code promo". Saisissez le code (ex: ALFA2026) et le
+                montant total sera automatiquement mis à jour avec la réduction.
+              </p>
+            </div>
+          </div>
+          <div id="guide-commercant" class="help-category">
+            <h2>Guide Commerçant</h2>
+            <div class="article-card">
+              <h3>Comment créer un compte Partenaire Commerçant ?</h3>
+              <p style="margin-bottom: 8px">
+                Rejoindre alfa en tant que restaurant ou boutique nécessite une
+                étape de vérification :
+              </p>
+              <ul
+                style="
+                  padding-left: 20px;
+                  margin-bottom: 0;
+                  color: var(--text-muted);
+                  font-size: 0.95rem;
+                  line-height: 1.6;
+                "
+              >
+                <li>
+                  <strong>1. Formulaire :</strong> Inscrivez-vous via la page
+                  "Devenir commerçant" de ce site ou téléchargez l'appli
+                  <b>alfa Commerçant</b>.
+                </li>
+                <li>
+                  <strong>2. Documents :</strong> Renseignez les informations de
+                  votre établissement et téléchargez votre
+                  <b>Registre de Commerce (RCCM)</b> ou numéro NIF.
+                </li>
+                <li>
+                  <strong>3. Validation :</strong> Notre équipe analyse et
+                  valide votre dossier sous 24h à 48h.
+                </li>
+                <li>
+                  <strong>4. Connexion :</strong> Une fois validé, vous recevrez
+                  un SMS. Vous pourrez alors vous connecter avec votre numéro et
+                  mot de passe pour ajouter vos produits.
+                </li>
+              </ul>
+            </div>
+            <div class="article-card">
+              <h3>Comment ajouter un nouveau produit au menu ?</h3>
+              <p>
+                Connectez-vous à l'application Commerçant. Allez dans l'onglet
+                "Menu/Catalogue", cliquez sur le bouton "+" en haut à droite.
+                Ajoutez une belle photo, un nom, une description appétissante et
+                le prix, puis enregistrez.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Comment gérer une commande entrante ?</h3>
+              <p>
+                Lorsqu'une commande arrive, votre appareil sonne. Cliquez sur
+                "Accepter" pour prévenir le client que vous commencez la
+                préparation. Une fois le repas prêt, cliquez sur "Prêt pour le
+                livreur".
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Comment mettre un article en rupture de stock ?</h3>
+              <p>
+                Dans votre Menu, trouvez l'article concerné, cliquez dessus et
+                décochez la case "Disponible". L'article sera masqué pour les
+                clients jusqu'à ce que vous le réactiviez.
+              </p>
+            </div>
+          </div>
+          <div id="guide-chauffeur" class="help-category">
+            <h2>Guide Chauffeur</h2>
+            <div class="article-card">
+              <h3>Comment s'inscrire et se connecter (Chauffeur) ?</h3>
+              <p style="margin-bottom: 8px">
+                L'inscription se fait entièrement en ligne pour plus de
+                simplicité :
+              </p>
+              <ul
+                style="
+                  padding-left: 20px;
+                  margin-bottom: 0;
+                  color: var(--text-muted);
+                  font-size: 0.95rem;
+                  line-height: 1.6;
+                "
+              >
+                <li>
+                  <strong>1.</strong> Téléchargez l'application
+                  <b>alfa Chauffeur</b> sur votre smartphone.
+                </li>
+                <li>
+                  <strong>2.</strong> Appuyez sur <b>"Devenir Chauffeur"</b> et
+                  validez votre numéro de téléphone par SMS.
+                </li>
+                <li>
+                  <strong>3.</strong> Prenez en photo vos documents obligatoires
+                  directement dans l'application :
+                  <b>Permis de conduire valide</b>, <b>Pièce d'identité</b>, et
+                  <b>Carte grise</b> du véhicule.
+                </li>
+                <li>
+                  <strong>4.</strong> Prenez un "selfie" (photo de profil
+                  claire) pour rassurer vos futurs passagers.
+                </li>
+                <li>
+                  <strong>5.</strong> Après vérification (sous 24h), votre
+                  compte est activé. Vous pouvez vous connecter et appuyer sur
+                  GO !
+                </li>
+              </ul>
+            </div>
+            <div class="article-card">
+              <h3>Comment utiliser le bouton GO ?</h3>
+              <p>
+                Le bouton GO indique que vous êtes en ligne et prêt à recevoir
+                des courses. Appuyez dessus pour commencer votre service.
+                N'oubliez pas d'appuyer sur "Déconnexion" lorsque vous avez
+                terminé votre journée.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Quels documents dois-je fournir pour m'inscrire ?</h3>
+              <p>
+                Vous devez fournir une photo claire de votre Permis de conduire
+                valide, de votre pièce d'identité (Carte d'identité ou
+                Passeport) et de la carte grise du véhicule. Tout se fait via
+                l'application.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Que faire si le client ne se présente pas ?</h3>
+              <p>
+                Arrivé au point de départ, attendez 5 minutes. Si le client
+                n'est pas là, essayez de l'appeler. S'il ne répond toujours pas,
+                vous pouvez annuler la course dans l'application en
+                sélectionnant "Client absent".
+              </p>
+            </div>
+          </div>
+          <div id="compte" class="help-category">
+            <h2>Gestion du compte</h2>
+            <div class="article-card">
+              <h3>Comment modifier mon mot de passe ?</h3>
+              <p>
+                Allez dans "Profil" > "Paramètres de sécurité" > "Changer de mot
+                de passe". Il vous sera demandé d'entrer votre ancien mot de
+                passe puis de saisir le nouveau.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Comment changer mon numéro de téléphone ?</h3>
+              <p>
+                Dans la section Profil, cliquez sur votre numéro actuel. Entrez
+                le nouveau numéro. Vous recevrez un code SMS à 4 chiffres pour
+                valider ce changement.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Comment supprimer mon compte alfa ?</h3>
+              <p>
+                Vous pouvez demander la suppression définitive de votre compte
+                et de vos données depuis "Profil" > "Paramètres" > "Supprimer
+                mon compte". L'action est irréversible après 30 jours.
+              </p>
+            </div>
+          </div>
+          <div id="paiements" class="help-category">
+            <h2>Paiements & Revenus</h2>
+            <div class="article-card">
+              <h3>Comment payer avec Mobile Money (Orange/MTN) ?</h3>
+              <p>
+                Lors de la validation, sélectionnez "Paiement mobile".
+                Choisissez votre opérateur, entrez votre numéro. Un menu USSD
+                apparaîtra sur votre téléphone pour valider la transaction avec
+                votre code secret.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Comment retirer mes revenus (Chauffeur/Commerçant) ?</h3>
+              <p>
+                Allez dans la section "Revenus" de votre app. Cliquez sur
+                "Demander un retrait". Les fonds seront transférés
+                instantanément sur votre numéro Mobile Money enregistré (minimum
+                50 000 GNF).
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Pourquoi ma carte ou mon paiement a échoué ?</h3>
+              <p>
+                Vérifiez que vous avez suffisamment de solde sur votre compte
+                Mobile Money et que votre connexion internet est stable. Si le
+                problème persiste, contactez votre opérateur ou notre support.
+              </p>
+            </div>
+          </div>
+          <div id="commandes" class="help-category">
+            <h2>Commandes et Courses</h2>
+            <div class="article-card">
+              <h3>J'ai oublié un objet dans le véhicule</h3>
+              <p>
+                Pas de panique ! Allez dans "Historique de courses",
+                sélectionnez la course concernée et cliquez sur "Contacter le
+                chauffeur". Vous avez 24h pour le joindre directement. Passé ce
+                délai, contactez notre support.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Ma commande de nourriture est incorrecte</h3>
+              <p>
+                Si le plat reçu ne correspond pas à votre commande, prenez une
+                photo du repas et du reçu, puis allez dans l'historique de la
+                commande et cliquez sur "Signaler un problème". Nous vous
+                dédommagerons.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Comment suivre mon livreur en temps réel ?</h3>
+              <p>
+                Dès que le livreur récupère votre repas, une carte s'affiche sur
+                votre écran. Vous verrez son icône se déplacer en temps réel
+                jusqu'à votre adresse de livraison.
+              </p>
+            </div>
+          </div>
+          <div id="securite" class="help-category">
+            <h2>Sécurité & Assistance</h2>
+            <div class="article-card">
+              <h3>Comment signaler un problème de sécurité ?</h3>
+              <p>
+                Pendant une course, un bouton "Urgence" (bouclier rouge) est
+                visible sur la carte. Cliquez dessus pour alerter instantanément
+                notre équipe de sécurité 24/7 ou appeler directement la police
+                locale.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Comment partager mon trajet avec un proche ?</h3>
+              <p>
+                Une fois dans le véhicule, cliquez sur "Partager ma position".
+                Vous pourrez envoyer un lien direct via WhatsApp ou SMS à vos
+                proches pour qu'ils suivent votre trajet en temps réel.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Mes données personnelles sont-elles protégées ?</h3>
+              <p>
+                Absolument. alfa respecte les normes internationales de
+                protection des données. Vos informations bancaires et de
+                localisation sont cryptées de bout en bout et ne sont jamais
+                vendues à des tiers.
+              </p>
+            </div>
+          </div>
+          <div id="technique" class="help-category">
+            <h2>Problèmes techniques</h2>
+            <div class="article-card">
+              <h3>L'application se ferme inopinément (Crash)</h3>
+              <p>
+                Assurez-vous d'avoir la dernière version d'alfa disponible sur
+                le store. Si le problème persiste, videz le cache de
+                l'application depuis les paramètres de votre téléphone, ou
+                réinstallez l'application.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>La localisation GPS est imprécise</h3>
+              <p>
+                Vérifiez que votre GPS est bien activé en "Haute précision" dans
+                les paramètres de votre téléphone. Assurez-vous également de ne
+                pas être dans un sous-sol ou un endroit couvert bloquant le
+                signal satellite.
+              </p>
+            </div>
+            <div class="article-card">
+              <h3>Je ne reçois pas les notifications</h3>
+              <p>
+                Allez dans les réglages de votre téléphone, section
+                "Applications" > "alfa" > "Notifications" et vérifiez qu'elles
+                sont bien autorisées. C'est indispensable pour les chauffeurs et
+                commerçants.
+              </p>
+            </div>
+          </div>
+          <div
+            id="no-results"
+            style="
+              display: none;
+              text-align: center;
+              padding: 40px;
+              color: var(--text-muted);
+            "
+          >
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              style="margin-bottom: 16px"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <h3>Aucun résultat trouvé</h3>
+            <p>
+              Nous n'avons pas trouvé de réponse correspondant à votre
+              recherche. Essayez d'autres mots-clés ou
+              <a
+                href="contact.html"
+                style="color: var(--color-primary); text-decoration: underline"
+                >contactez-nous</a
+              >.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <h2
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+              "
+            >
+              <span class="footer-img-wrap"
+                ><img
+                  src="assets/images/logo.png"
+                  alt="logo"
+                  class="footer-logo-img" /></span
+              >alfa<span>.</span>
+            </h2>
+            <p>
+              Commandes de nourriture, Livraisons et Déplacements en Guinée.
+            </p>
+          </div>
+          <div class="footer-links-grid">
+            <div class="footer-column">
+              <h4>alfa</h4>
+              <a href="index.html#services">À propos d'alfa</a>
+              <a href="#">Actualités</a>
+              <a href="aide.html">Centre d'aide</a>
+              <a href="contact.html">Contact</a>
+              <a href="telechargement.html">Télécharger l'application</a>
+            </div>
+            <div class="footer-column">
+              <h4>Partenaires</h4>
+              <a href="commercant.html">Devenir commerçant</a>
+              <a href="chauffeur.html">Devenir chauffeur</a>
+            </div>
+            <div class="footer-column">
+              <h4>Légal</h4>
+              <a href="cgu.html">Conditions d'utilisation</a>
+              <a href="confidentialite.html">Politique de confidentialité</a>
+              <a href="cookies.html">Politique relative aux cookies</a>
+              <a href="mentions-legales.html">Mentions légales</a>
+            </div>
+            <div class="footer-column footer-contact">
+              <h4>Contact</h4>
+              <a href="tel:+224614878886"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="margin-top: -2px"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                614 87 88 86</a
+              >
+              <a href="mailto:alfa6ams@gmail.com"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="margin-top: -2px"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                alfa6ams@gmail.com</a
+              >
+              <div class="footer-social">
+                <a
+                  href="https://www.facebook.com/alfa/posts/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    /></svg
+                ></a>
+                <a
+                  href="https://www.instagram.com/alfa.guinee/reels/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg
+                ></a>
+                <a href="#" aria-label="X (Twitter)"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M4 4l11.73 16h5L9 4z" />
+                    <path d="M4 20l6.76-6.76" />
+                    <path d="M20 4l-6.76 6.76" /></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            alfa. Tous droits réservés.
+          </p>
+          <div class="service-status">
+            <span class="status-dot"></span>
+            Tous les systèmes sont opérationnels
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // 1. Logique de Recherche en temps réel avec surbrillance (highlight)
+      const searchInput = document.getElementById("searchInput");
+      const categories = document.querySelectorAll(".help-category");
+      const noResults = document.getElementById("no-results");
+      // Sauvegarder le contenu original pour la réinitialisation
+      const originalContents = [];
+      document.querySelectorAll(".article-card").forEach((card) => {
+        originalContents.push({
+          card: card,
+          h3: card.querySelector("h3").innerHTML,
+          p: card.querySelector("p").innerHTML,
+        });
+      });
+      searchInput.addEventListener("input", function (e) {
+        const term = e.target.value.trim();
+        const lowerTerm = term.toLowerCase();
+        let hasResults = false;
+        // Fonction pour surligner le texte
+        const highlightText = (text, search) => {
+          if (!search) return text;
+          const regex = new RegExp(
+            `(${search.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")})`,
+            "gi",
+          );
+          return text.replace(regex, "<mark>$1</mark>");
+        };
+        if (term === "") {
+          // Si la recherche est vide, on restaure tout
+          originalContents.forEach((item) => {
+            item.card.querySelector("h3").innerHTML = item.h3;
+            item.card.querySelector("p").innerHTML = item.p;
+            item.card.style.display = "block";
+          });
+          categories.forEach((c) => (c.style.display = "block"));
+          if (noResults) noResults.style.display = "none";
+          return;
+        }
+        categories.forEach((category) => {
+          let categoryHasMatch = false;
+          originalContents.forEach((item) => {
+            if (category.contains(item.card)) {
+              const cardText = (item.h3 + " " + item.p).toLowerCase();
+              if (cardText.includes(lowerTerm)) {
+                item.card.style.display = "block";
+                categoryHasMatch = true;
+                hasResults = true;
+                // Appliquer la surbrillance
+                item.card.querySelector("h3").innerHTML = highlightText(
+                  item.h3,
+                  term,
+                );
+                item.card.querySelector("p").innerHTML = highlightText(
+                  item.p,
+                  term,
+                );
+              } else {
+                item.card.style.display = "none";
+              }
+            }
+          });
+          category.style.display = categoryHasMatch ? "block" : "none";
+        });
+        if (noResults) {
+          noResults.style.display = hasResults ? "none" : "block";
+        }
+      });
+      // 2. Logique du Menu Vertical (Défilement fluide & ScrollSpy)
+      const navLinks = document.querySelectorAll(".help-nav a");
+      // Clic sur un lien : défilement fluide
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100, // Décalage pour l'en-tête
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+      // Mettre à jour le lien actif pendant le défilement (ScrollSpy)
+      window.addEventListener("scroll", () => {
+        let current = "";
+        categories.forEach((category) => {
+          const categoryTop = category.offsetTop;
+          if (pageYOffset >= categoryTop - 150) {
+            current = category.getAttribute("id");
+          }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").substring(1) === current) {
+            link.classList.add("active");
+          }
+        });
+      });
+      // 3. Navigation au clavier (flèches directionnelles) pour le menu latéral
+      const sidebar = document.querySelector(".help-sidebar");
+      if (sidebar) {
+        sidebar.setAttribute("tabindex", "0");
+        sidebar.style.outline = "none"; // Cache la bordure bleue de focus
+        // Donne le focus au menu quand la souris le survole
+        sidebar.addEventListener("mouseenter", () => {
+          sidebar.focus({ preventScroll: true });
+        });
+        // Retire le focus quand la souris sort du menu
+        sidebar.addEventListener("mouseleave", () => {
+          sidebar.blur();
+        });
+        // Gère le défilement avec les flèches (Haut / Bas)
+        sidebar.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+            e.preventDefault(); // Empêche la grande page de bouger
+            const scrollAmount = 50; // Vitesse de défilement
+            sidebar.scrollTop +=
+              e.key === "ArrowDown" ? scrollAmount : -scrollAmount;
+          }
+        });
+      }
+    </script>
+    <script src="js/main.js" defer></script>
+
+    <!-- GTranslate Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit2() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "fr", autoDisplay: false },
+          "google_translate_element2",
+        );
+      }
+      function doGTranslate(lang_pair) {
+        if (lang_pair.value) lang_pair = lang_pair.value;
+        if (lang_pair == "") return;
+        var lang = lang_pair.split("|")[1];
+        var teCombo;
+        var sel = document.getElementsByTagName("select");
+        for (var i = 0; i < sel.length; i++) {
+          if (sel[i].className.indexOf("goog-te-combo") != -1) {
+            teCombo = sel[i];
+            break;
+          }
+        }
+        if (
+          document.getElementById("google_translate_element2") == null ||
+          document.getElementById("google_translate_element2").innerHTML
+            .length == 0 ||
+          teCombo.length == 0 ||
+          teCombo.innerHTML.length == 0
+        ) {
+          setTimeout(function () {
+            doGTranslate(lang_pair);
+          }, 500);
+        } else {
+          teCombo.value = lang;
+          GTranslateFireEvent(teCombo, "change");
+          GTranslateFireEvent(teCombo, "change");
+          // Update all current-lang spans
+          const spans = document.querySelectorAll(".current-lang");
+          spans.forEach((span) => {
+            span.textContent = lang === "zh-CN" ? "ZH" : lang.toUpperCase();
+          });
+        }
+      }
+      function GTranslateFireEvent(element, event) {
+        try {
+          if (document.createEventObject) {
+            var evt = document.createEventObject();
+            element.fireEvent("on" + event, evt);
+          } else {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent(event, true, true);
+            element.dispatchEvent(evt);
+          }
+        } catch (e) {}
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"
+    ></script>
+  </body>
+</html>

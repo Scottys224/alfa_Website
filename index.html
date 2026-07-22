@@ -1,0 +1,1310 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alfa - Super-application de transport et livraison en Guinée</title>
+    <meta
+      name="description"
+      content="Commandez un chauffeur, de la nourriture ou envoyez des colis rapidement et en toute sécurité avec Alfa. La super-application n°1 en Guinée."
+    />
+    <link rel="canonical" href="https://www.alfa.com.gn/" />
+    <meta
+      property="og:title"
+      content="Alfa - Super-application de transport et livraison en Guinée"
+    />
+    <meta
+      property="og:description"
+      content="Commandez un chauffeur, de la nourriture ou envoyez des colis rapidement et en toute sécurité avec Alfa. La super-application n°1 en Guinée."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.alfa.com.gn/" />
+    <meta property="og:site_name" content="Alfa" />
+    <meta
+      property="og:image"
+      content="https://www.alfa.com.gn/assets/og-image.jpg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Polices Google : Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Balises SEO Open Graph (Partage) -->
+
+    <!-- Anti-Flash for Hash Links -->
+    <style>
+      html.mask-hash-loading body {
+        opacity: 0 !important;
+      }
+    </style>
+    <script>
+      if (window.location.hash && window.location.hash.length > 1) {
+        document.documentElement.classList.add("mask-hash-loading");
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            document.documentElement.classList.remove("mask-hash-loading");
+            document.body.style.transition = "opacity 0.2s ease-in";
+            document.body.style.opacity = "1";
+          }, 10);
+        });
+        // Sécurité
+        setTimeout(function () {
+          document.documentElement.classList.remove("mask-hash-loading");
+          document.body.style.opacity = "1";
+        }, 500);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- EN-TÊTE -->
+    <header class="header">
+      <div class="container nav-container">
+        <a
+          href="index.html"
+          class="logo"
+          style="display: flex; align-items: center; gap: 4px"
+          ><span class="logo-img-wrap"
+            ><img
+              src="assets/images/logo.png"
+              alt="logo"
+              class="header-logo-img" /></span
+          >alfa<span class="dot">.</span></a
+        >
+        <nav class="nav-links">
+          <a href="index.html">Accueil</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#fonctionnement">Voir comment ça marche</a>
+          <a href="index.html#partenaires">Partenaires</a>
+          <a href="aide.html">Aide</a> <a href="contact.html">Contact</a>
+          <div class="nav-dropdown">
+            <button class="btn btn-outline nav-dropdown-btn">
+              Devenir partenaire
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="vertical-align: middle; margin-left: 4px"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            <div class="dropdown-content">
+              <a href="commercant.html">Commerçant</a>
+              <a href="chauffeur.html">Chauffeur</a>
+            </div>
+          </div>
+
+          <!-- Language Switcher -->
+          <div class="nav-dropdown lang-switcher" style="margin-right: 12px">
+            <button
+              class="btn btn-outline nav-dropdown-btn"
+              style="
+                padding: 0.5rem;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-weight: 600;
+              "
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                ></path>
+              </svg>
+              <span class="current-lang">FR</span>
+            </button>
+            <div class="dropdown-content lang-dropdown">
+              <a
+                href="#"
+                onclick="
+                  doGTranslate('fr|fr');
+                  return false;
+                "
+                title="Français"
+                >🇫🇷 Français</a
+              >
+              <a
+                href="#"
+                onclick="
+                  doGTranslate('fr|en');
+                  return false;
+                "
+                title="English"
+                >🇬🇧 English</a
+              >
+              <a
+                href="#"
+                onclick="
+                  doGTranslate('fr|zh-CN');
+                  return false;
+                "
+                title="Chinese"
+                >🇨🇳 中文</a
+              >
+            </div>
+          </div>
+          <!-- GTranslate Wrapper -->
+          <div id="google_translate_element2" style="display: none"></div>
+
+          <a href="telechargement.html" class="btn btn-primary"
+            >Télécharger l'app</a
+          >
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Ouvrir le menu">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 12h18M3 6h18M3 18h18" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main>
+      <!-- SECTION HERO -->
+      <section class="hero">
+        <div class="container hero-container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              Vos commandes de nourriture, livraisons et déplacements en
+              <span class="text-gradient">Guinée.</span>
+            </h1>
+            <p class="hero-subtitle">
+              alfa vous accompagne au quotidien — taxi, moto, repas, courses —
+              en toute sécurité à Conakry.
+            </p>
+            <div class="hero-actions">
+              <a
+                href="telechargement.html"
+                class="btn btn-primary btn-large"
+                id="hero-cta-download"
+                >Télécharger l'application</a
+              >
+              <div class="qr-code-wrapper">
+                <div class="qr-placeholder">QR</div>
+                <span class="qr-text">Scannez pour télécharger</span>
+              </div>
+            </div>
+            <div class="platforms">
+              <span class="platform-badge">Android (Google Play)</span>
+              <span class="platform-badge">iOS (Bientôt)</span>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="glass-card mockup phone-mockup">
+              <div class="mockup-header">App alfa</div>
+              <div class="mockup-body">
+                <div class="mockup-item service-taxi">Taxi &amp; Moto</div>
+                <div class="mockup-item service-food">Nourriture</div>
+                <div class="mockup-item service-shop">Commerces</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- PRÉSENTATION DES SERVICES -->
+      <section id="services" class="ecosystem-section">
+        <div class="container">
+          <h2 class="section-title">Nos <span>services</span></h2>
+          <div class="cards-grid">
+            <article class="ecosystem-card">
+              <div class="card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+                  <path d="M7 2v20" />
+                  <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+                </svg>
+              </div>
+              <h3>Nourriture</h3>
+              <p>
+                Commandez vos repas préférés depuis les meilleurs restaurants de
+                la ville et faites-vous livrer chaud.
+              </p>
+              <a
+                href="nourriture.html"
+                class="card-link"
+                style="
+                  margin-top: 16px;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 4px;
+                  font-weight: 500;
+                  color: var(--color-primary);
+                  text-decoration: none;
+                "
+                >En savoir plus
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" /></svg
+              ></a>
+            </article>
+            <article class="ecosystem-card">
+              <div class="card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"
+                  />
+                  <circle cx="7" cy="17" r="2" />
+                  <path d="M9 17h6" />
+                  <circle cx="17" cy="17" r="2" />
+                </svg>
+              </div>
+              <h3>Taxi et Moto</h3>
+              <p>
+                Déplacez-vous rapidement et en sécurité. Choisissez entre une
+                moto pour éviter les bouchons ou un taxi pour le confort.
+              </p>
+              <a
+                href="chauffeur.html"
+                class="card-link"
+                style="
+                  margin-top: 16px;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 4px;
+                  font-weight: 500;
+                  color: var(--color-primary);
+                  text-decoration: none;
+                "
+                >En savoir plus
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" /></svg
+              ></a>
+            </article>
+            <article class="ecosystem-card">
+              <div class="card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path
+                    d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                  />
+                </svg>
+              </div>
+              <h3>Commerces</h3>
+              <p>
+                Faites vos courses, achetez des vêtements ou des produits
+                électroniques dans nos boutiques partenaires.
+              </p>
+              <a
+                href="commercant.html"
+                class="card-link"
+                style="
+                  margin-top: 16px;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 4px;
+                  font-weight: 500;
+                  color: var(--color-primary);
+                  text-decoration: none;
+                "
+                >En savoir plus
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" /></svg
+              ></a>
+            </article>
+            <article class="ecosystem-card">
+              <div class="card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="16.5" y1="9.4" x2="7.5" y2="4.21" />
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                  />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <h3>Livraison de colis</h3>
+              <p>
+                Envoyez ou recevez vos colis et documents avec un suivi en temps
+                réel garanti.
+              </p>
+              <a
+                href="livraison.html"
+                class="card-link"
+                style="
+                  margin-top: 16px;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 4px;
+                  font-weight: 500;
+                  color: var(--color-primary);
+                  text-decoration: none;
+                "
+                >En savoir plus
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" /></svg
+              ></a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- FONCTIONNEMENT -->
+      <section id="fonctionnement" class="steps-section">
+        <div class="container">
+          <h2 class="section-title">Comment ça <span>marche ?</span></h2>
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <h3>Télécharger l'application</h3>
+              <p>Disponible sur Google Play Store (et bientôt App Store).</p>
+            </div>
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <h3>Créer un compte</h3>
+              <p>
+                Inscription simple et sécurisée avec votre numéro de téléphone
+                ou votre adresse e-mail.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <h3>Choisir un service</h3>
+              <p>
+                Sélectionnez Course, Nourriture, Boutique ou Livraison de colis.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <h3>Suivre et recevoir</h3>
+              <p>
+                Suivez votre chauffeur en temps réel et profitez du service.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- APP CLIENT FEATURES -->
+      <section class="app-features-section">
+        <div class="container">
+          <div class="feature-layout">
+            <div class="feature-text">
+              <h2>Une application pensée pour <span>vous</span></h2>
+              <ul class="feature-list">
+                <li>
+                  <strong>Accueil intuitif :</strong> Accès direct à tous les
+                  services.
+                </li>
+                <li>
+                  <strong>Recherche facile :</strong> Trouvez rapidement votre
+                  destination ou votre plat.
+                </li>
+                <li>
+                  <strong>Panier unifié :</strong> Gérez vos commandes en
+                  quelques clics.
+                </li>
+                <li>
+                  <strong>Suivi en temps réel :</strong> Carte GPS intégrée pour
+                  suivre le livreur/chauffeur.
+                </li>
+                <li>
+                  <strong>Paiements :</strong> En espèces ou via mobile money.
+                </li>
+              </ul>
+            </div>
+            <div class="feature-image">
+              <div class="glass-card phone-mockup" style="padding: 0">
+                <div class="mockup-slider">
+                  <img
+                    src="assets/images/Appclient.jpg"
+                    class="mockup-slide slide-3"
+                    alt="App Client 1"
+                  />
+                  <img
+                    src="assets/images/Appclient (2).jpg"
+                    class="mockup-slide slide-3"
+                    alt="App Client 2"
+                  />
+                  <img
+                    src="assets/images/Appclient (3).jpg"
+                    class="mockup-slide slide-3"
+                    alt="App Client 3"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION COMMERÇANT -->
+      <section class="partner-section merchant-theme">
+        <div class="container">
+          <div class="feature-layout reverse">
+            <div class="feature-text">
+              <h2>Développez votre <span>commerce</span></h2>
+              <p>
+                Rejoignez alfa et boostez vos ventes en touchant des milliers de
+                nouveaux clients.
+              </p>
+              <ul class="feature-list">
+                <li>Recevez plus de commandes au quotidien.</li>
+                <li>
+                  Présentez vos produits dans une vitrine digitale élégante.
+                </li>
+                <li>
+                  Gérez vos ventes facilement via l'application Commerçant.
+                </li>
+                <li>Bénéficiez de notre flotte de livreurs rapides.</li>
+                <li>Suivez l'évolution de vos revenus en direct.</li>
+              </ul>
+              <a href="commercant.html" class="btn btn-primary btn-large mt-4"
+                >Devenir commerçant partenaire</a
+              >
+            </div>
+            <div class="feature-image">
+              <div class="glass-card phone-mockup" style="padding: 0">
+                <div class="mockup-slider">
+                  <img
+                    src="assets/images/app Comm.jpg"
+                    class="mockup-slide slide-4"
+                    alt="App Commerçant 1"
+                  />
+                  <img
+                    src="assets/images/App comm (2).jpg"
+                    class="mockup-slide slide-4"
+                    alt="App Commerçant 2"
+                  />
+                  <img
+                    src="assets/images/app Comm (3).jpg"
+                    class="mockup-slide slide-4"
+                    alt="App Commerçant 3"
+                  />
+                  <img
+                    src="assets/images/App comm (4).jpg"
+                    class="mockup-slide slide-4"
+                    alt="App Commerçant 4"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION CHAUFFEUR -->
+      <section class="partner-section driver-theme">
+        <div class="container">
+          <div class="feature-layout">
+            <div class="feature-text">
+              <h2>
+                Prenez le volant et développez votre activité avec
+                <span>alfa</span>
+              </h2>
+              <p>
+                Devenez partenaire alfa avec votre Moto, Voiture ou Camionnette.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <strong>Flexibilité :</strong> Travaillez quand vous voulez
+                  avec le bouton GO.
+                </li>
+                <li>
+                  <strong>Missions claires :</strong> Réception de commandes
+                  détaillées (trajet, gain).
+                </li>
+                <li>
+                  <strong>Suivi :</strong> Tableau de bord transparent de vos
+                  revenus.
+                </li>
+                <li>
+                  <strong>Conditions :</strong> Permis valide et documents du
+                  véhicule requis.
+                </li>
+              </ul>
+              <a href="chauffeur.html" class="btn btn-primary btn-large mt-4"
+                >Devenir chauffeur alfa</a
+              >
+            </div>
+            <div class="feature-image">
+              <div class="glass-card phone-mockup" style="padding: 0">
+                <div class="mockup-slider">
+                  <img
+                    src="assets/images/Appchauff.jpg"
+                    class="mockup-slide slide-2"
+                    alt="App Chauffeur 1"
+                  />
+                  <img
+                    src="assets/images/appchauff (2).jpg"
+                    class="mockup-slide slide-2"
+                    alt="App Chauffeur 2"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SÉCURITÉ ET CONFIANCE -->
+      <section class="security-section">
+        <div class="container">
+          <h2 class="section-title">Sécurité et <span>Confiance</span></h2>
+          <div class="security-grid">
+            <div class="security-item">
+              <h4>Validation des chauffeurs</h4>
+              <p>
+                Chaque profil est vérifié (identité, documents du véhicule).
+              </p>
+            </div>
+            <div class="security-item">
+              <h4>Suivi GPS en direct</h4>
+              <p>
+                Partagez votre trajet avec vos proches pour plus de sérénité.
+              </p>
+            </div>
+            <div class="security-item">
+              <h4>Protection des données</h4>
+              <p>
+                Vos données sont protégées par des mécanismes de sécurité et des
+                contrôles d'accès.
+              </p>
+            </div>
+            <div class="security-item">
+              <h4>Assistance 7j/7</h4>
+              <p>Un support client réactif en cas de besoin.</p>
+            </div>
+            <div class="security-item">
+              <h4>Traçabilité</h4>
+              <p>Historique complet de toutes vos opérations et courses.</p>
+            </div>
+            <div class="security-item">
+              <h4>Signalement</h4>
+              <p>
+                Possibilité de signaler facilement tout problème depuis l'app.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ZONES DESSERVIES -->
+      <section class="zones-section">
+        <div class="container text-center">
+          <h2 class="section-title">Zones <span>desservies</span></h2>
+          <p>alfa est actuellement opérationnel dans les zones suivantes :</p>
+          <div class="zones-layout">
+            <div class="map-container">
+              <img
+                src="assets/images/map-conakry.png"
+                alt="Carte de Conakry"
+                class="map-img"
+              />
+            </div>
+            <div class="zones-info">
+              <div class="zones-list" style="justify-content: flex-start">
+                <a
+                  href="https://www.google.com/maps/search/Restaurants+Conakry+Guin%C3%A9e/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="zone-badge"
+                  style="
+                    text-decoration: none;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                  "
+                  title="Voir la carte sur Google Maps"
+                >
+                  Disponible à Conakry
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              </div>
+              <div class="communes-list">
+                <span class="commune-pill">Kaloum</span>
+                <span class="commune-pill">Dixinn</span>
+                <span class="commune-pill">Matam</span>
+                <span class="commune-pill">Ratoma</span>
+                <span class="commune-pill">Matoto</span>
+              </div>
+              <div class="extension-badge">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"
+                  />
+                </svg>
+                Bientôt dans d'autres villes
+              </div>
+              <div class="notify-card">
+                <h4>Prévenez-moi quand alfa arrive dans ma zone</h4>
+                <form
+                  class="notify-form"
+                  onsubmit="
+                    event.preventDefault();
+                    alert(
+                      'Merci ! Vous serez notifié lors de notre arrivée dans votre zone.',
+                    );
+                  "
+                >
+                  <input
+                    type="text"
+                    placeholder="Votre adresse e-mail ou numéro de téléphone"
+                    required
+                  />
+                  <button type="submit" class="btn btn-primary">
+                    M'alerter
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- PARTENAIRES -->
+      <section
+        id="partenaires"
+        class="partners-section"
+        style="padding: 100px 0; background: var(--color-background)"
+      >
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 60px">
+            <h2 class="section-title">Devenez <span>Partenaire</span></h2>
+            <p
+              style="
+                color: var(--text-muted);
+                font-size: 1.1rem;
+                max-width: 600px;
+                margin: 0 auto;
+              "
+            >
+              Rejoignez l'écosystème alfa et faites grandir votre activité ou
+              augmentez vos revenus en toute flexibilité.
+            </p>
+          </div>
+          <div
+            class="partners-grid"
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 32px;
+            "
+          >
+            <!-- Commerçants -->
+            <div
+              class="partner-card glass-card"
+              style="
+                padding: 40px;
+                border-radius: var(--radius-lg);
+                text-align: center;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                transition: var(--transition);
+              "
+            >
+              <div
+                class="partner-icon-wrapper"
+                style="
+                  width: 80px;
+                  height: 80px;
+                  background: rgba(16, 185, 129, 0.1);
+                  color: var(--color-merchant);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 24px;
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"
+                  />
+                </svg>
+              </div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 16px">
+                Commerçants & Restaurants
+              </h3>
+              <p
+                style="
+                  color: var(--text-muted);
+                  margin-bottom: 24px;
+                  line-height: 1.6;
+                "
+              >
+                Touchez des milliers de nouveaux clients et développez vos
+                ventes grâce à notre service de livraison rapide et fiable.
+              </p>
+              <a
+                href="commercant.html"
+                class="btn btn-outline"
+                style="
+                  width: 100%;
+                  border-color: var(--color-merchant);
+                  color: var(--color-merchant);
+                "
+                >Devenir Commerçant</a
+              >
+            </div>
+            <!-- Chauffeurs -->
+            <div
+              class="partner-card glass-card"
+              style="
+                padding: 40px;
+                border-radius: var(--radius-lg);
+                text-align: center;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                transition: var(--transition);
+              "
+            >
+              <div
+                class="partner-icon-wrapper"
+                style="
+                  width: 80px;
+                  height: 80px;
+                  background: rgba(245, 158, 11, 0.1);
+                  color: var(--color-driver);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 24px;
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"
+                  />
+                  <circle cx="7" cy="17" r="2" />
+                  <path d="M9 17h6" />
+                  <circle cx="17" cy="17" r="2" />
+                </svg>
+              </div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 16px">
+                Chauffeurs & Livreurs
+              </h3>
+              <p
+                style="
+                  color: var(--text-muted);
+                  margin-bottom: 24px;
+                  line-height: 1.6;
+                "
+              >
+                Générez des revenus à votre rythme. Conduisez votre propre
+                véhicule, choisissez vos horaires et soyez votre propre patron.
+              </p>
+              <a
+                href="chauffeur.html"
+                class="btn btn-outline"
+                style="
+                  width: 100%;
+                  border-color: var(--color-driver);
+                  color: var(--color-driver);
+                "
+                >Devenir Chauffeur</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- AVIS ET TÉMOIGNAGES -->
+      <section class="reviews-section">
+        <div class="container">
+          <h2 class="section-title">Ils nous font <span>confiance</span></h2>
+          <div class="reviews-grid">
+            <div class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Super pratique pour commander à manger quand il pleut. Les
+                livreurs sont rapides !"
+              </p>
+              <strong>- Aminata C. (Cliente)</strong>
+            </div>
+            <div class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Depuis que j'ai inscrit mon restaurant sur alfa, mes ventes ont
+                augmenté de 30%."
+              </p>
+              <strong>- Mamadou S. (Commerçant)</strong>
+            </div>
+            <div class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                "L'application chauffeur est fluide. Je gère mon temps comme je
+                veux."
+              </p>
+              <strong>- Ibrahima B. (Chauffeur Moto)</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FAQ -->
+      <section class="faq-section">
+        <div class="container">
+          <h2 class="section-title">Questions <span>fréquentes</span></h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Comment créer un compte ?</summary>
+              <p>
+                Téléchargez l'application, ouvrez-la et sur la première page de
+                connexion, juste en dessous du bouton « Se connecter », cliquez
+                sur <strong>« Pas encore inscrit ? Créer un compte »</strong>.
+                Remplissez ensuite les informations demandées dans le formulaire
+                et cliquez sur <strong>« S'inscrire »</strong>. Enfin, validez
+                le code reçu par SMS ou par e-mail sur votre téléphone pour
+                commencer.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Comment commander un repas ou un taxi ?</summary>
+              <p>
+                Ouvrez l'application, choisissez la section "Nourriture" ou
+                "Taxi", sélectionnez ce que vous voulez et validez votre
+                panier/trajet.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Comment devenir partenaire (Commerçant ou Chauffeur) ?
+              </summary>
+              <p>
+                Cliquez sur les boutons d'inscription sur ce site, ou
+                téléchargez l'application dédiée (alfa Commerçant / alfa
+                Chauffeur) pour soumettre vos documents.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Quels documents sont nécessaires pour devenir partenaire ?
+              </summary>
+              <p>
+                Pour les <strong>chauffeurs</strong>, vous aurez besoin de votre
+                permis de conduire, de la carte grise du véhicule et d'une pièce
+                d'identité valide. Pour les <strong>commerçants</strong>, il
+                vous faudra une pièce d'identité du gérant et les documents
+                d'enregistrement de votre commerce.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Quels moyens de paiement sont acceptés ?</summary>
+              <p>
+                Nous acceptons les paiements en espèces à la livraison, ainsi
+                que les principaux services de Mobile Money locaux.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Comment contacter le support ?</summary>
+              <p>
+                Depuis le menu de l'application, allez dans la section "Aide" ou
+                contactez-nous via la page Centre d'Aide de ce site.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+      <!-- DERNIER APPEL À L'ACTION -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-inner">
+            <div class="cta-text">
+              <h2>Prêt à simplifier votre quotidien ?</h2>
+              <p>
+                Rejoignez des milliers d'utilisateurs qui font confiance à alfa
+                chaque jour à Conakry.
+              </p>
+              <div class="cta-actions mt-4">
+                <a href="telechargement.html" class="btn btn-primary btn-large"
+                  >Télécharger l'application</a
+                >
+                <a href="commercant.html" class="btn btn-outline btn-large"
+                  >Devenir commerçant partenaire</a
+                >
+              </div>
+              <div class="platforms mt-4">
+                <a
+                  href="https://play.google.com/store"
+                  target="_blank"
+                  rel="noopener"
+                  class="store-btn"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    style="margin-right: 6px; vertical-align: middle"
+                  >
+                    <path
+                      d="M3 20.5v-17c0-.83 1-1.3 1.67-.77l14 8.5c.6.37.6 1.17 0 1.54l-14 8.5C4 21.8 3 21.33 3 20.5z"
+                    />
+                  </svg>
+                  Google Play
+                </a>
+                <span
+                  class="store-btn ios-soon"
+                  title="Application iOS en cours de développement"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    style="margin-right: 6px; vertical-align: middle"
+                  >
+                    <path
+                      d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                    />
+                  </svg>
+                  iOS <span class="soon-badge">Bientôt</span>
+                </span>
+              </div>
+            </div>
+            <div class="cta-qr">
+              <div class="qr-box">
+                <div class="qr-code-grid"></div>
+                <p class="qr-label">Scanner pour télécharger</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- PIED DE PAGE -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <h2
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+              "
+            >
+              <span class="footer-img-wrap"
+                ><img
+                  src="assets/images/logo.png"
+                  alt="logo"
+                  class="footer-logo-img" /></span
+              >alfa<span>.</span>
+            </h2>
+            <p>
+              Commandes de nourriture, Livraisons et Déplacements en Guinée.
+            </p>
+          </div>
+          <div class="footer-links-grid">
+            <div class="footer-column">
+              <h4>alfa</h4>
+              <a href="index.html#services">À propos d'alfa</a>
+              <a href="#">Actualités</a> <a href="aide.html">Centre d'aide</a>
+              <a href="contact.html">Contact</a>
+              <a href="telechargement.html">Télécharger l'application</a>
+            </div>
+            <div class="footer-column">
+              <h4>Partenaires</h4>
+              <a href="commercant.html">Devenir commerçant</a>
+              <a href="chauffeur.html">Devenir chauffeur</a>
+            </div>
+            <div class="footer-column">
+              <h4>Légal</h4>
+              <a href="cgu.html">Conditions d'utilisation</a>
+              <a href="confidentialite.html">Politique de confidentialité</a>
+              <a href="cookies.html">Politique relative aux cookies</a>
+              <a href="mentions-legales.html">Mentions légales</a>
+            </div>
+            <div class="footer-column footer-contact">
+              <h4>Contact</h4>
+              <a href="tel:+224614878886"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="margin-top: -2px"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                614 87 88 86</a
+              >
+              <a href="mailto:alfa6ams@gmail.com"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="margin-top: -2px"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                alfa6ams@gmail.com</a
+              >
+              <div class="footer-social">
+                <a
+                  href="https://www.facebook.com/alfa/posts/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    /></svg
+                ></a>
+                <a
+                  href="https://www.instagram.com/alfa.guinee/reels/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg
+                ></a>
+                <a href="#" aria-label="X (Twitter)"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M4 4l11.73 16h5L9 4z" />
+                    <path d="M4 20l6.76-6.76" />
+                    <path d="M20 4l-6.76 6.76" /></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            alfa. Tous droits réservés.
+          </p>
+          <div class="service-status">
+            <span class="status-dot"></span> Tous les systèmes sont
+            opérationnels
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Script JS -->
+    <script src="js/main.js" defer></script>
+
+    <!-- GTranslate Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit2() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "fr", autoDisplay: false },
+          "google_translate_element2",
+        );
+      }
+      function doGTranslate(lang_pair) {
+        if (lang_pair.value) lang_pair = lang_pair.value;
+        if (lang_pair == "") return;
+        var lang = lang_pair.split("|")[1];
+        var teCombo;
+        var sel = document.getElementsByTagName("select");
+        for (var i = 0; i < sel.length; i++) {
+          if (sel[i].className.indexOf("goog-te-combo") != -1) {
+            teCombo = sel[i];
+            break;
+          }
+        }
+        if (
+          document.getElementById("google_translate_element2") == null ||
+          document.getElementById("google_translate_element2").innerHTML
+            .length == 0 ||
+          teCombo.length == 0 ||
+          teCombo.innerHTML.length == 0
+        ) {
+          setTimeout(function () {
+            doGTranslate(lang_pair);
+          }, 500);
+        } else {
+          teCombo.value = lang;
+          GTranslateFireEvent(teCombo, "change");
+          GTranslateFireEvent(teCombo, "change");
+          // Update all current-lang spans
+          const spans = document.querySelectorAll(".current-lang");
+          spans.forEach((span) => {
+            span.textContent = lang === "zh-CN" ? "ZH" : lang.toUpperCase();
+          });
+        }
+      }
+      function GTranslateFireEvent(element, event) {
+        try {
+          if (document.createEventObject) {
+            var evt = document.createEventObject();
+            element.fireEvent("on" + event, evt);
+          } else {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent(event, true, true);
+            element.dispatchEvent(evt);
+          }
+        } catch (e) {}
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"
+    ></script>
+  </body>
+</html>
