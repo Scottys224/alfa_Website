@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="fr">
   <head>
+    <meta name="theme-color" content="#087f5b" />
+
     <meta charset="UTF-8" />
     <title>Alfa - Super-application de transport et livraison en Guinée</title>
     <meta
@@ -59,6 +61,7 @@
         }, 500);
       }
     </script>
+    <link rel="stylesheet" href="css/cookies-consent.css" />
   </head>
   <body>
     <!-- EN-TÊTE -->
@@ -77,9 +80,9 @@
         >
         <nav class="nav-links">
           <a href="index.html">Accueil</a>
-          <a href="index.html#services">Services</a>
-          <a href="index.html#fonctionnement">Voir comment ça marche</a>
-          <a href="index.html#partenaires">Partenaires</a>
+          <a href="#services">Services</a>
+          <a href="#fonctionnement">Voir comment ça marche</a>
+          <a href="#partenaires">Partenaires</a>
           <a href="aide.html">Aide</a> <a href="contact.html">Contact</a>
           <div class="nav-dropdown">
             <button class="btn btn-outline nav-dropdown-btn">
@@ -136,7 +139,7 @@
             </button>
             <div class="dropdown-content lang-dropdown">
               <a
-                href="#"
+                href="javascript:void(0);"
                 onclick="
                   doGTranslate('fr|fr');
                   return false;
@@ -145,7 +148,7 @@
                 >🇫🇷 Français</a
               >
               <a
-                href="#"
+                href="javascript:void(0);"
                 onclick="
                   doGTranslate('fr|en');
                   return false;
@@ -154,7 +157,7 @@
                 >🇬🇧 English</a
               >
               <a
-                href="#"
+                href="javascript:void(0);"
                 onclick="
                   doGTranslate('fr|zh-CN');
                   return false;
@@ -501,16 +504,19 @@
                     src="assets/images/Appclient.jpg"
                     class="mockup-slide slide-3"
                     alt="App Client 1"
+                    loading="lazy"
                   />
                   <img
                     src="assets/images/Appclient (2).jpg"
                     class="mockup-slide slide-3"
                     alt="App Client 2"
+                    loading="lazy"
                   />
                   <img
                     src="assets/images/Appclient (3).jpg"
                     class="mockup-slide slide-3"
                     alt="App Client 3"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -550,21 +556,25 @@
                     src="assets/images/app Comm.jpg"
                     class="mockup-slide slide-4"
                     alt="App Commerçant 1"
+                    loading="lazy"
                   />
                   <img
                     src="assets/images/App comm (2).jpg"
                     class="mockup-slide slide-4"
                     alt="App Commerçant 2"
+                    loading="lazy"
                   />
                   <img
                     src="assets/images/app Comm (3).jpg"
                     class="mockup-slide slide-4"
                     alt="App Commerçant 3"
+                    loading="lazy"
                   />
                   <img
                     src="assets/images/App comm (4).jpg"
                     class="mockup-slide slide-4"
                     alt="App Commerçant 4"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -613,11 +623,13 @@
                     src="assets/images/Appchauff.jpg"
                     class="mockup-slide slide-2"
                     alt="App Chauffeur 1"
+                    loading="lazy"
                   />
                   <img
                     src="assets/images/appchauff (2).jpg"
                     class="mockup-slide slide-2"
                     alt="App Chauffeur 2"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -677,6 +689,7 @@
                 src="assets/images/map-conakry.png"
                 alt="Carte de Conakry"
                 class="map-img"
+                loading="lazy"
               />
             </div>
             <div class="zones-info">
@@ -740,24 +753,97 @@
               </div>
               <div class="notify-card">
                 <h4>Prévenez-moi quand alfa arrive dans ma zone</h4>
-                <form
-                  class="notify-form"
-                  onsubmit="
-                    event.preventDefault();
-                    alert(
-                      'Merci ! Vous serez notifié lors de notre arrivée dans votre zone.',
-                    );
-                  "
-                >
+                <form class="notify-form" id="notifyForm">
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value="003e9773-ce3d-484e-a71f-c64fe062cf9b"
+                  />
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value="Nouvelle alerte d'arrivée (alfa zone)"
+                  />
+                  <input type="hidden" name="from_name" value="Alfa Website" />
+
                   <input
                     type="text"
+                    name="contact"
                     placeholder="Votre adresse e-mail ou numéro de téléphone"
                     required
                   />
-                  <button type="submit" class="btn btn-primary">
+                  <!-- hCaptcha gratuit de Web3Forms -->
+                  <div
+                    class="h-captcha"
+                    data-captcha="true"
+                    style="margin-bottom: 15px"
+                  ></div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="notifySubmitBtn"
+                  >
                     M'alerter
                   </button>
+                  <p
+                    id="notify-success"
+                    style="
+                      display: none;
+                      color: var(--color-primary);
+                      font-weight: bold;
+                      margin-top: 10px;
+                    "
+                  >
+                    Merci ! Vous serez notifié lors de notre arrivée dans votre
+                    zone.
+                  </p>
                 </form>
+
+                <script>
+                  document
+                    .getElementById("notifyForm")
+                    .addEventListener("submit", function (e) {
+                      e.preventDefault();
+                      const form = this;
+                      const submitBtn =
+                        document.getElementById("notifySubmitBtn");
+                      const originalBtnText = submitBtn.innerText;
+                      submitBtn.innerText = "Envoi...";
+                      submitBtn.disabled = true;
+
+                      fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        headers: { Accept: "application/json" },
+                        body: new FormData(form),
+                      })
+                        .then((response) => response.json())
+                        .then((data) => {
+                          if (data.success) {
+                            form.reset();
+                            document.getElementById(
+                              "notify-success",
+                            ).style.display = "block";
+                            submitBtn.style.display = "none";
+                          } else {
+                            alert("Erreur : " + data.message);
+                          }
+                        })
+                        .catch((error) => {
+                          alert("Une erreur s'est produite.");
+                        })
+                        .finally(() => {
+                          submitBtn.innerText = originalBtnText;
+                          submitBtn.disabled = false;
+                        });
+                    });
+                </script>
+                <!-- Script Web3Forms pour hCaptcha -->
+                <script
+                  src="https://web3forms.com/client/script.js"
+                  async
+                  defer
+                ></script>
               </div>
             </div>
           </div>
@@ -1081,7 +1167,7 @@
             </div>
             <div class="cta-qr">
               <div class="qr-box">
-                <div class="qr-code-grid"></div>
+                <div class="qr-placeholder" style="width: 120px; height: 120px; margin: 0 auto 10px; font-size: 1.5rem;">QR</div>
                 <p class="qr-label">Scanner pour télécharger</p>
               </div>
             </div>
@@ -1116,7 +1202,7 @@
           <div class="footer-links-grid">
             <div class="footer-column">
               <h4>alfa</h4>
-              <a href="index.html#services">À propos d'alfa</a>
+              <a href="#services">À propos d'alfa</a>
               <a href="#">Actualités</a> <a href="aide.html">Centre d'aide</a>
               <a href="contact.html">Contact</a>
               <a href="telechargement.html">Télécharger l'application</a>
@@ -1132,6 +1218,13 @@
               <a href="confidentialite.html">Politique de confidentialité</a>
               <a href="cookies.html">Politique relative aux cookies</a>
               <a href="mentions-legales.html">Mentions légales</a>
+              <button
+                type="button"
+                data-open-cookie-settings
+                class="footer-cookie-button"
+              >
+                Gérer mes cookies
+              </button>
             </div>
             <div class="footer-column footer-contact">
               <h4>Contact</h4>
@@ -1272,6 +1365,7 @@
           document.getElementById("google_translate_element2") == null ||
           document.getElementById("google_translate_element2").innerHTML
             .length == 0 ||
+          !teCombo ||
           teCombo.length == 0 ||
           teCombo.innerHTML.length == 0
         ) {
@@ -1306,5 +1400,120 @@
       type="text/javascript"
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"
     ></script>
+
+    <!-- Bannière de consentement aux cookies -->
+    <div
+      id="cookie-banner"
+      class="cookie-banner"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cookie-title"
+      aria-describedby="cookie-description"
+      hidden
+    >
+      <div class="cookie-banner__content">
+        <h2 id="cookie-title">Vos préférences de confidentialité</h2>
+        <p id="cookie-description">
+          alfa utilise des cookies nécessaires au fonctionnement du site. Avec
+          votre accord, nous pouvons aussi utiliser des cookies statistiques et
+          publicitaires. Vous pouvez accepter, refuser ou personnaliser votre
+          choix.
+        </p>
+        <p>
+          <a href="cookies.html"
+            >Consulter notre politique relative aux cookies</a
+          >
+        </p>
+        <div class="cookie-banner__actions">
+          <button
+            id="cookie-reject-all"
+            class="cookie-button cookie-button--secondary"
+            type="button"
+          >
+            Tout refuser
+          </button>
+          <button
+            id="cookie-customize"
+            class="cookie-button cookie-button--secondary"
+            type="button"
+          >
+            Personnaliser
+          </button>
+          <button
+            id="cookie-accept-all"
+            class="cookie-button cookie-button--primary"
+            type="button"
+          >
+            Tout accepter
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fenêtre de personnalisation -->
+    <div
+      id="cookie-settings"
+      class="cookie-settings"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cookie-settings-title"
+      hidden
+    >
+      <div class="cookie-settings__panel">
+        <h2 id="cookie-settings-title">Personnaliser les cookies</h2>
+        <div class="cookie-category">
+          <div>
+            <h3>Cookies nécessaires</h3>
+            <p>Indispensables au fonctionnement et à la sécurité du site.</p>
+          </div>
+          <input
+            type="checkbox"
+            checked
+            disabled
+            aria-label="Cookies nécessaires toujours activés"
+          />
+        </div>
+        <div class="cookie-category">
+          <div>
+            <h3>Cookies statistiques</h3>
+            <p>Ils nous aident à comprendre l’utilisation du site.</p>
+          </div>
+          <input
+            id="consent-analytics"
+            type="checkbox"
+            aria-label="Autoriser les cookies statistiques"
+          />
+        </div>
+        <div class="cookie-category">
+          <div>
+            <h3>Cookies marketing</h3>
+            <p>Ils permettent de mesurer les campagnes publicitaires.</p>
+          </div>
+          <input
+            id="consent-marketing"
+            type="checkbox"
+            aria-label="Autoriser les cookies marketing"
+          />
+        </div>
+        <div class="cookie-banner__actions">
+          <button
+            id="cookie-settings-cancel"
+            class="cookie-button cookie-button--secondary"
+            type="button"
+          >
+            Annuler
+          </button>
+          <button
+            id="cookie-save-settings"
+            class="cookie-button cookie-button--primary"
+            type="button"
+          >
+            Enregistrer mes choix
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/cookies-consent.js"></script>
   </body>
 </html>

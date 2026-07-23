@@ -36,6 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 mobileMenuBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
             }
         });
+
+        // Close menu when a link inside is clicked (solves the "stuck in cloud" anchor link issue)
+        const menuLinks = navLinks.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // If we are on mobile and the menu is open, simulate a click on the burger to close it
+                if (window.innerWidth <= 768 && mobileMenuBtn.getAttribute("aria-expanded") === "true") {
+                    mobileMenuBtn.click();
+                }
+            });
+        });
         
         // Reset on resize
         window.addEventListener('resize', () => {
@@ -81,4 +92,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }, observerOptions);
     
     elementsToAnimate.forEach(el => animationObserver.observe(el));
+
+    // 3. Fermer les menus déroulants après un clic (très utile pour la sélection de langue)
+    document.querySelectorAll('.dropdown-content a').forEach(link => {
+        link.addEventListener('click', function() {
+            const dropdown = this.closest('.dropdown-content');
+            if (dropdown) {
+                dropdown.style.display = 'none'; // Force hide
+                setTimeout(() => {
+                    dropdown.style.display = ''; // Restore CSS hover control
+                }, 100);
+            }
+        });
+    });
 });

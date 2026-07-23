@@ -48,7 +48,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+  /* Removed smooth scrolling to jump directly to anchor content */
 }
 
 body {
@@ -1003,6 +1003,16 @@ section {
     position: relative;
     display: inline-block;
 }
+
+/* Invisible bridge to prevent hover state from dropping when moving to the menu */
+.nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 15px;
+}
 .nav-dropdown-btn {
     background: transparent;
     border: 1px solid var(--border-color);
@@ -1300,12 +1310,25 @@ section {
 
 
 /* Google Translate Widget Overrides */
-body { top: 0 !important; }
-.goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon { display: none !important; }
+body { top: 0 !important; position: static !important; }
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget-icon,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+#goog-gt-tt,
+.goog-tooltip { display: none !important; visibility: hidden !important; }
+.goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
 .goog-te-gadget-simple { background-color: transparent !important; border: none !important; }
 .lang-switcher .dropdown-content { min-width: 140px; }
 .lang-switcher .dropdown-content a { display: flex; align-items: center; gap: 8px; }
 /* Fix section overlap with fixed header for anchor links */
 section[id] {
   scroll-margin-top: 100px;
+}
+
+/* Accessibilité (SEO & Navigation Clavier) */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
 }

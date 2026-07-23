@@ -1,6 +1,8 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
+    <meta name="theme-color" content="#087f5b" />
+
     <meta charset="UTF-8" />
     <title>Politique des Cookies - Alfa</title>
     <meta
@@ -74,6 +76,7 @@
         }, 500);
       }
     </script>
+    <link rel="stylesheet" href="css/cookies-consent.css" />
   </head>
   <body>
     <header class="header">
@@ -151,7 +154,7 @@
             </button>
             <div class="dropdown-content lang-dropdown">
               <a
-                href="#"
+                href="javascript:void(0);"
                 onclick="
                   doGTranslate('fr|fr');
                   return false;
@@ -160,7 +163,7 @@
                 >🇫🇷 Français</a
               >
               <a
-                href="#"
+                href="javascript:void(0);"
                 onclick="
                   doGTranslate('fr|en');
                   return false;
@@ -169,7 +172,7 @@
                 >🇬🇧 English</a
               >
               <a
-                href="#"
+                href="javascript:void(0);"
                 onclick="
                   doGTranslate('fr|zh-CN');
                   return false;
@@ -191,21 +194,54 @@
     <main>
       <section class="container legal-content">
         <h1>Politique relative aux Cookies</h1>
+        <p>Dernière mise à jour : 23 juillet 2026</p>
+
         <h2>1. Qu'est-ce qu'un cookie ?</h2>
         <p>
-          Un cookie est un petit fichier texte enregistré sur votre appareil
-          lors de votre visite sur notre site web.
+          Un cookie est une petite information enregistrée sur l’appareil du
+          visiteur lors de sa navigation sur un site.
         </p>
-        <h2>2. Pourquoi les utilisons-nous ?</h2>
+
+        <h2>2. Cookies nécessaires</h2>
         <p>
-          Nous utilisons des cookies essentiels pour assurer le bon
-          fonctionnement du site, mémoriser vos préférences, et analyser le
-          trafic pour améliorer nos services de livraison et de transport.
+          Ces cookies servent au fonctionnement, à la sécurité (ex: hCaptcha) et
+          à la mémorisation de vos préférences (ex: votre choix de consentement
+          ou de langue). Ils ne peuvent pas être désactivés depuis la bannière
+          car ils sont indispensables.
         </p>
-        <h2>3. Gestion des cookies</h2>
+
+        <h2>3. Cookies statistiques</h2>
         <p>
-          Vous pouvez à tout moment désactiver les cookies non-essentiels via
-          les paramètres de votre navigateur.
+          Avec votre accord, alfa peut utiliser Google Analytics afin de mesurer
+          la fréquentation, comprendre l'utilisation du site et améliorer nos
+          services.
+        </p>
+
+        <h2>4. Cookies marketing</h2>
+        <p>
+          Avec votre accord, alfa peut utiliser Meta Pixel afin de mesurer les
+          performances de nos campagnes publicitaires sur Facebook et Instagram,
+          et proposer des offres adaptées.
+        </p>
+
+        <h2>5. Modifier votre choix</h2>
+        <p>
+          Vous pouvez à tout moment modifier vos préférences ou retirer votre
+          consentement en cliquant sur le bouton ci-dessous :
+        </p>
+        <button
+          type="button"
+          data-open-cookie-settings
+          class="btn btn-outline"
+          style="margin-top: 15px"
+        >
+          Gérer mes cookies
+        </button>
+
+        <h2>6. Nous contacter</h2>
+        <p>
+          Pour toute question concernant vos données ou cette politique :
+          <a href="mailto:alfa6ams@gmail.com">alfa6ams@gmail.com</a>
         </p>
       </section>
     </main>
@@ -390,6 +426,7 @@
           document.getElementById("google_translate_element2") == null ||
           document.getElementById("google_translate_element2").innerHTML
             .length == 0 ||
+          !teCombo ||
           teCombo.length == 0 ||
           teCombo.innerHTML.length == 0
         ) {
@@ -424,5 +461,120 @@
       type="text/javascript"
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"
     ></script>
+
+    <!-- Bannière de consentement aux cookies -->
+    <div
+      id="cookie-banner"
+      class="cookie-banner"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cookie-title"
+      aria-describedby="cookie-description"
+      hidden
+    >
+      <div class="cookie-banner__content">
+        <h2 id="cookie-title">Vos préférences de confidentialité</h2>
+        <p id="cookie-description">
+          alfa utilise des cookies nécessaires au fonctionnement du site. Avec
+          votre accord, nous pouvons aussi utiliser des cookies statistiques et
+          publicitaires. Vous pouvez accepter, refuser ou personnaliser votre
+          choix.
+        </p>
+        <p>
+          <a href="cookies.html"
+            >Consulter notre politique relative aux cookies</a
+          >
+        </p>
+        <div class="cookie-banner__actions">
+          <button
+            id="cookie-reject-all"
+            class="cookie-button cookie-button--secondary"
+            type="button"
+          >
+            Tout refuser
+          </button>
+          <button
+            id="cookie-customize"
+            class="cookie-button cookie-button--secondary"
+            type="button"
+          >
+            Personnaliser
+          </button>
+          <button
+            id="cookie-accept-all"
+            class="cookie-button cookie-button--primary"
+            type="button"
+          >
+            Tout accepter
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fenêtre de personnalisation -->
+    <div
+      id="cookie-settings"
+      class="cookie-settings"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cookie-settings-title"
+      hidden
+    >
+      <div class="cookie-settings__panel">
+        <h2 id="cookie-settings-title">Personnaliser les cookies</h2>
+        <div class="cookie-category">
+          <div>
+            <h3>Cookies nécessaires</h3>
+            <p>Indispensables au fonctionnement et à la sécurité du site.</p>
+          </div>
+          <input
+            type="checkbox"
+            checked
+            disabled
+            aria-label="Cookies nécessaires toujours activés"
+          />
+        </div>
+        <div class="cookie-category">
+          <div>
+            <h3>Cookies statistiques</h3>
+            <p>Ils nous aident à comprendre l’utilisation du site.</p>
+          </div>
+          <input
+            id="consent-analytics"
+            type="checkbox"
+            aria-label="Autoriser les cookies statistiques"
+          />
+        </div>
+        <div class="cookie-category">
+          <div>
+            <h3>Cookies marketing</h3>
+            <p>Ils permettent de mesurer les campagnes publicitaires.</p>
+          </div>
+          <input
+            id="consent-marketing"
+            type="checkbox"
+            aria-label="Autoriser les cookies marketing"
+          />
+        </div>
+        <div class="cookie-banner__actions">
+          <button
+            id="cookie-settings-cancel"
+            class="cookie-button cookie-button--secondary"
+            type="button"
+          >
+            Annuler
+          </button>
+          <button
+            id="cookie-save-settings"
+            class="cookie-button cookie-button--primary"
+            type="button"
+          >
+            Enregistrer mes choix
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/cookies-consent.js"></script>
   </body>
 </html>
