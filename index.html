@@ -809,6 +809,32 @@
                       const submitBtn =
                         document.getElementById("notifySubmitBtn");
                       const originalBtnText = submitBtn.innerText;
+
+                      // Protection Anti-Spam Locale (Max 4 mails par 3 minutes)
+                      const now = Date.now();
+                      const rateLimitWindow = 3 * 60 * 1000; // 3 minutes
+                      const maxRequests = 4; // Max 4 mails
+
+                      let history = JSON.parse(
+                        localStorage.getItem("alfaFormSubmissions") || "[]",
+                      );
+                      history = history.filter(
+                        (time) => now - time < rateLimitWindow,
+                      );
+
+                      if (history.length >= maxRequests) {
+                        alert(
+                          "Sécurité : Vous avez envoyé trop de messages. Veuillez patienter 3 minutes avant de réessayer.",
+                        );
+                        return; // Bloquer l'envoi
+                      }
+
+                      history.push(now);
+                      localStorage.setItem(
+                        "alfaFormSubmissions",
+                        JSON.stringify(history),
+                      );
+
                       submitBtn.innerText = "Envoi...";
                       submitBtn.disabled = true;
 
@@ -1167,7 +1193,17 @@
             </div>
             <div class="cta-qr">
               <div class="qr-box">
-                <div class="qr-placeholder" style="width: 120px; height: 120px; margin: 0 auto 10px; font-size: 1.5rem;">QR</div>
+                <div
+                  class="qr-placeholder"
+                  style="
+                    width: 120px;
+                    height: 120px;
+                    margin: 0 auto 10px;
+                    font-size: 1.5rem;
+                  "
+                >
+                  QR
+                </div>
                 <p class="qr-label">Scanner pour télécharger</p>
               </div>
             </div>
