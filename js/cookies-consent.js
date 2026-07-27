@@ -163,6 +163,8 @@ function readConsent() {
 }
 
 function applyConsent(consent) {
+  // Web3Forms and Google Translate are now loaded statically in the HTML
+  
   if (consent.analytics) {
     loadGoogleAnalytics();
   }
@@ -171,6 +173,8 @@ function applyConsent(consent) {
     loadMetaPixel();
   }
 }
+
+
 
 function loadGoogleAnalytics() {
   if (

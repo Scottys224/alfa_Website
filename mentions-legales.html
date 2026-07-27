@@ -29,12 +29,7 @@
       content="https://www.alfa.com.gn/assets/og-image.jpg"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="assets/fonts/fonts.css" />
     <link rel="stylesheet" href="css/style.css" />
     <style>
       .legal-content {
@@ -43,7 +38,8 @@
         margin: 0 auto;
       }
       .legal-content h1 {
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 1.4rem + 3vw, 2.5rem);
+    text-wrap: balance;
         margin-bottom: 24px;
         color: var(--color-primary);
       }
@@ -83,7 +79,10 @@
       }
     </script>
     <link rel="stylesheet" href="css/cookies-consent.css" />
-  </head>
+  
+    <link rel="preconnect" href="https://translate.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://translate.google.com" crossorigin>
+</head>
   <body>
     <header class="header">
       <div class="container nav-container">
@@ -92,8 +91,7 @@
           class="logo"
           style="display: flex; align-items: center; gap: 4px"
           ><span class="logo-img-wrap"
-            ><img
-              src="assets/images/logo.png"
+            ><img width="1254" height="1254" src="assets/images/logo.webp"
               alt="logo"
               class="header-logo-img" /></span
           >alfa<span class="dot">.</span></a
@@ -101,7 +99,7 @@
         <nav class="nav-links">
           <a href="index.html">Accueil</a>
           <a href="index.html#services">Services</a>
-          <a href="index.html#fonctionnement">Voir comment ça marche</a>
+          <a href="index.html#fonctionnement">Fonctionnement</a>
           <a href="index.html#partenaires">Partenaires</a>
           <a href="aide.html">Aide</a>
           <a href="contact.html">Contact</a>
@@ -156,35 +154,26 @@
                   d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
                 ></path>
               </svg>
-              <span class="current-lang">FR</span>
+              <span class="current-lang notranslate">FR</span>
             </button>
-            <div class="dropdown-content lang-dropdown">
+            <div class="dropdown-content lang-dropdown notranslate">
               <a
                 href="javascript:void(0);"
-                onclick="
-                  doGTranslate('fr|fr');
-                  return false;
-                "
+                onclick="doGTranslate('fr|fr'); return false;" class="lang-option"
                 title="Français"
-                >🇫🇷 Français</a
+                >Français</a
               >
               <a
                 href="javascript:void(0);"
-                onclick="
-                  doGTranslate('fr|en');
-                  return false;
-                "
+                onclick="doGTranslate('fr|en'); return false;" class="lang-option"
                 title="English"
-                >🇬🇧 English</a
+                >English</a
               >
               <a
                 href="javascript:void(0);"
-                onclick="
-                  doGTranslate('fr|zh-CN');
-                  return false;
-                "
+                onclick="doGTranslate('fr|zh-CN'); return false;" class="lang-option"
                 title="Chinese"
-                >🇨🇳 中文</a
+                >中文</a
               >
             </div>
           </div>
@@ -203,10 +192,16 @@
         <h2>Éditeur du site</h2>
         <p>
           <strong>alfa Guinée</strong><br />Société à Responsabilité Limitée
-          (SARL)<br />Conakry, Guinée<br />Email : alfa6ams@gmail.com
+          (SARL)<br />Capital social : [À COMPLÉTER]<br />
+          RCCM : [À COMPLÉTER] | NIF : [À COMPLÉTER]<br />
+          Conakry, Guinée<br />
+          Directeur de la publication : [À COMPLÉTER]<br />
+          Email : alfa6ams@gmail.com
         </p>
         <h2>Hébergement</h2>
         <p>
+          Le site est hébergé par : [NOM DE L'HÉBERGEUR - À COMPLÉTER]<br />
+          Adresse : [ADRESSE DE L'HÉBERGEUR - À COMPLÉTER]<br />
           Le site est hébergé sur des serveurs sécurisés garantissant une haute
           disponibilité pour l'ensemble des utilisateurs guinéens.
         </p>
@@ -231,8 +226,7 @@
               "
             >
               <span class="footer-img-wrap"
-                ><img
-                  src="assets/images/logo.png"
+                ><img width="1254" height="1254" src="assets/images/logo.webp"
                   alt="logo"
                   class="footer-logo-img" /></span
               >alfa<span>.</span>
@@ -314,7 +308,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  ><svg
+                ><svg
                     width="20"
                     height="20"
                     viewBox="0 0 24 24"
@@ -333,7 +327,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  ><svg
+                ><svg
                     width="20"
                     height="20"
                     viewBox="0 0 24 24"
@@ -369,9 +363,7 @@
         <div class="footer-bottom">
           <p class="copyright">
             &copy;
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
+            <span data-annee-courante></span>
             alfa. Tous droits réservés.
           </p>
           <div class="service-status">
@@ -383,64 +375,8 @@
     </footer>
 
     <!-- GTranslate Script -->
-    <script type="text/javascript">
-      function googleTranslateElementInit2() {
-        new google.translate.TranslateElement(
-          { pageLanguage: "fr", autoDisplay: false },
-          "google_translate_element2",
-        );
-      }
-      function doGTranslate(lang_pair) {
-        if (lang_pair.value) lang_pair = lang_pair.value;
-        if (lang_pair == "") return;
-        var lang = lang_pair.split("|")[1];
-        var teCombo;
-        var sel = document.getElementsByTagName("select");
-        for (var i = 0; i < sel.length; i++) {
-          if (sel[i].className.indexOf("goog-te-combo") != -1) {
-            teCombo = sel[i];
-            break;
-          }
-        }
-        if (
-          document.getElementById("google_translate_element2") == null ||
-          document.getElementById("google_translate_element2").innerHTML
-            .length == 0 ||
-          !teCombo ||
-          teCombo.length == 0 ||
-          teCombo.innerHTML.length == 0
-        ) {
-          setTimeout(function () {
-            doGTranslate(lang_pair);
-          }, 500);
-        } else {
-          teCombo.value = lang;
-          GTranslateFireEvent(teCombo, "change");
-          GTranslateFireEvent(teCombo, "change");
-          // Update all current-lang spans
-          const spans = document.querySelectorAll(".current-lang");
-          spans.forEach((span) => {
-            span.textContent = lang === "zh-CN" ? "ZH" : lang.toUpperCase();
-          });
-        }
-      }
-      function GTranslateFireEvent(element, event) {
-        try {
-          if (document.createEventObject) {
-            var evt = document.createEventObject();
-            element.fireEvent("on" + event, evt);
-          } else {
-            var evt = document.createEvent("HTMLEvents");
-            evt.initEvent(event, true, true);
-            element.dispatchEvent(evt);
-          }
-        } catch (e) {}
-      }
-    </script>
-    <script
-      type="text/javascript"
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"
-    ></script>
+    
+    
 
     <!-- Bannière de consentement aux cookies -->
     <div
@@ -556,5 +492,66 @@
     </div>
 
     <script src="js/cookies-consent.js"></script>
+      <script src="js/interactions.js" defer></script>
+      <script src="js/form-handler.js" defer></script>
+      
+      
+      <script src="js/main.js" defer></script>
+  
+    <!-- GTranslate Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit2() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "fr", autoDisplay: false },
+          "google_translate_element2",
+        );
+      }
+      function doGTranslate(lang_pair) {
+        if (lang_pair.value) lang_pair = lang_pair.value;
+        if (lang_pair == "") return;
+        var lang = lang_pair.split("|")[1];
+        var teCombo;
+        var sel = document.getElementsByTagName("select");
+        for (var i = 0; i < sel.length; i++) {
+          if (sel[i].className.indexOf("goog-te-combo") != -1) {
+            teCombo = sel[i];
+            break;
+          }
+        }
+        if (
+          document.getElementById("google_translate_element2") == null ||
+          document.getElementById("google_translate_element2").innerHTML.length == 0 ||
+          !teCombo ||
+          teCombo.length == 0 ||
+          teCombo.innerHTML.length == 0
+        ) {
+          setTimeout(function () {
+            doGTranslate(lang_pair);
+          }, 50);
+        } else {
+          teCombo.value = lang;
+          GTranslateFireEvent(teCombo, "change");
+          GTranslateFireEvent(teCombo, "change");
+          const spans = document.querySelectorAll(".current-lang");
+          spans.forEach((span) => {
+            span.textContent = lang === "zh-CN" ? "ZH" : lang.toUpperCase();
+          });
+        }
+      }
+      function GTranslateFireEvent(element, event) {
+        try {
+          if (document.createEventObject) {
+            var evt = document.createEventObject();
+            element.fireEvent("on" + event, evt);
+          } else {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent(event, true, true);
+            element.dispatchEvent(evt);
+          }
+        } catch (e) {}
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+
   </body>
 </html>

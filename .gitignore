@@ -1,0 +1,13 @@
+# Secrets — ne doivent jamais entrer dans l'historique
+.env
+.env.*
+*.pem
+*.key
+serviceAccountKey.json
+firebase-adminsdk-*.json
+
+# Dépendances et artefacts
+node_modules/
+dist/
+.DS_Store
+Thumbs.db

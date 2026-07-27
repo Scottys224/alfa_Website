@@ -1,0 +1,26 @@
+{
+  "name": "alfa_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "download_fonts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scottys224/alfa_Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Scottys224/alfa_Website/issues"
+  },
+  "homepage": "https://github.com/Scottys224/alfa_Website#readme",
+  "dependencies": {
+    "image-size": "^2.0.2",
+    "puppeteer": "^25.4.0",
+    "sharp": "^0.35.3"
+  }
+}

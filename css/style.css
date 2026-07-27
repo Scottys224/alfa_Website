@@ -2,15 +2,22 @@
    VARIABLES CSS (DESIGN SYSTEM MODERNE ET MAINTENABLE)
    ========================================================================= */
 :root {
+    --border-color: #E2E8F0;
+    --bg-hover: #F1F5F9;
+    --color-gray-400: rgba(255, 255, 255, 0.7);
+    --color-white: #FFFFFF;
+    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --text-body: var(--text-main);
+
     /* Couleurs premium (thème clair) */
-    --color-primary: #10B981; /* Emeraude (Vert) */
+    --color-primary: #047857; /* Emeraude (Vert) */
     --color-primary-hover: #059669; /* Emeraude foncé */
     --color-secondary: #0F172A; /* Slate foncé */
     --color-background: #F8FAFC;
     --color-surface: #FFFFFF;
     
     /* Couleurs partenaires */
-    --color-merchant: #10B981; /* Emeraude */
+    --color-merchant: #047857; /* Emeraude */
     --color-driver: #F59E0B; /* Ambre */
     
     /* Textes */
@@ -20,7 +27,7 @@
     
     /* Gradients modernes */
     --gradient-primary: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
-    --gradient-merchant: linear-gradient(135deg, #10B981 0%, #3B82F6 100%);
+    --gradient-merchant: linear-gradient(135deg, #047857 0%, #3B82F6 100%);
     --gradient-driver: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
     
     /* Ombres douces (Glassmorphism & Profondeur) */
@@ -57,7 +64,6 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -113,7 +119,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    min-height: 80px;
 }
 
 .logo {
@@ -130,7 +136,8 @@ ul {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .nav-links a:not(.btn) {
@@ -311,8 +318,9 @@ ul {
 }
 
 .phone-mockup {
-    width: 320px;
-    height: 600px;
+    width: min(320px, 100%);
+    aspect-ratio: 320/600;
+    height: auto;
     margin: 0 auto;
     border-radius: 40px;
     border: 8px solid var(--color-secondary);
@@ -576,7 +584,7 @@ section {
 
 .security-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 40px;
 }
 
@@ -643,7 +651,7 @@ section {
 
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 32px;
 }
 
@@ -1042,7 +1050,7 @@ section {
 }
 .dropdown-content a {
     color: var(--text-heading) !important;
-    padding: 14px 20px !important;
+    padding: 4px 20px !important;
     text-decoration: none;
     display: block;
     font-weight: 500;
@@ -1052,7 +1060,10 @@ section {
     background-color: var(--bg-hover);
     color: var(--color-primary) !important;
 }
-.nav-dropdown:hover .dropdown-content {
+.nav-dropdown:hover .dropdown-content,
+.nav-dropdown:focus-within .dropdown-content,
+.lang-switcher:hover .dropdown-content,
+.lang-switcher:focus-within .dropdown-content {
     display: block;
 }
 
@@ -1321,7 +1332,7 @@ body { top: 0 !important; position: static !important; }
 .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
 .goog-te-gadget-simple { background-color: transparent !important; border: none !important; }
 .lang-switcher .dropdown-content { min-width: 140px; }
-.lang-switcher .dropdown-content a { display: flex; align-items: center; gap: 8px; }
+.lang-switcher .dropdown-content a { display: flex; align-items: center; gap: 4px; padding: 4px 10px !important; }
 /* Fix section overlap with fixed header for anchor links */
 section[id] {
   scroll-margin-top: 100px;
@@ -1331,4 +1342,53 @@ section[id] {
 :focus-visible {
   outline: 3px solid var(--color-primary);
   outline-offset: 3px;
+}
+
+.lang-switcher .dropdown-content a { padding: 4px 10px !important; }
+
+
+/* --- Fix Mobile (< 480px) --- */
+@media (max-width: 480px) {
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .container {
+        padding: 0 15px;
+    }
+    .footer-links-grid, .services-grid, .features-grid, .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+    h1 {
+        font-size: 2rem !important;
+        word-wrap: break-word;
+    }
+    h2 {
+        font-size: 1.5rem !important;
+        word-wrap: break-word;
+    }
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    .hero-buttons .btn {
+        width: 100%;
+        margin: 0;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }

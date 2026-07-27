@@ -1,0 +1,19 @@
+<IfModule mod_headers.c>
+    # Forcer le HTTPS (HSTS)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    
+    # Empêcher le Clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # Empêcher le vol de type MIME
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Protéger les informations de provenance
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Bloquer l'accès aux dossiers et fichiers sensibles
+RedirectMatch 404 /\.git
+<FilesMatch "^(seo_update\.js|\.gitignore|fix\.js|download_fonts\.js|fix_links\.js)$">
+  Require all denied
+</FilesMatch>

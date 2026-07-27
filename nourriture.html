@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta name="theme-color" content="#087f5b" />
@@ -26,12 +26,7 @@
       content="https://www.alfa.com.gn/assets/og-image.jpg"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="assets/fonts/fonts.css" />
     <link rel="stylesheet" href="css/style.css" />
     <style>
       .service-hero {
@@ -53,7 +48,8 @@
       }
       .service-content h1 {
         font-family: "Poppins", sans-serif;
-        font-size: 3rem;
+        font-size: clamp(2rem, 1.4rem + 3vw, 3rem);
+    text-wrap: balance;
         color: var(--color-secondary);
         margin-bottom: 24px;
         line-height: 1.2;
@@ -118,7 +114,8 @@
         border-color: rgba(79, 70, 229, 0.3);
       }
       .cuisine-icon {
-        font-size: 3rem;
+        font-size: clamp(2rem, 1.4rem + 3vw, 3rem);
+    text-wrap: balance;
         margin-bottom: 16px;
         display: inline-block;
         background: var(--color-background);
@@ -259,7 +256,10 @@
       }
     </script>
     <link rel="stylesheet" href="css/cookies-consent.css" />
-  </head>
+  
+    <link rel="preconnect" href="https://translate.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://translate.google.com" crossorigin>
+</head>
   <body>
     <!-- EN-TÊTE -->
     <header class="header">
@@ -269,8 +269,7 @@
           class="logo"
           style="display: flex; align-items: center; gap: 4px"
           ><span class="logo-img-wrap"
-            ><img
-              src="assets/images/logo.png"
+            ><img width="1254" height="1254" src="assets/images/logo.webp"
               alt="logo"
               class="header-logo-img" /></span
           >alfa<span class="dot">.</span></a
@@ -278,7 +277,7 @@
         <nav class="nav-links">
           <a href="index.html">Accueil</a>
           <a href="index.html#services">Services</a>
-          <a href="index.html#fonctionnement">Voir comment ça marche</a>
+          <a href="index.html#fonctionnement">Fonctionnement</a>
           <a href="index.html#partenaires">Partenaires</a>
           <a href="aide.html">Aide</a>
           <a href="contact.html">Contact</a>
@@ -333,35 +332,26 @@
                   d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
                 ></path>
               </svg>
-              <span class="current-lang">FR</span>
+              <span class="current-lang notranslate">FR</span>
             </button>
-            <div class="dropdown-content lang-dropdown">
+            <div class="dropdown-content lang-dropdown notranslate">
               <a
                 href="javascript:void(0);"
-                onclick="
-                  doGTranslate('fr|fr');
-                  return false;
-                "
+                onclick="doGTranslate('fr|fr'); return false;" class="lang-option"
                 title="Français"
-                >🇫🇷 Français</a
+                >Français</a
               >
               <a
                 href="javascript:void(0);"
-                onclick="
-                  doGTranslate('fr|en');
-                  return false;
-                "
+                onclick="doGTranslate('fr|en'); return false;" class="lang-option"
                 title="English"
-                >🇬🇧 English</a
+                >English</a
               >
               <a
                 href="javascript:void(0);"
-                onclick="
-                  doGTranslate('fr|zh-CN');
-                  return false;
-                "
+                onclick="doGTranslate('fr|zh-CN'); return false;" class="lang-option"
                 title="Chinese"
-                >🇨🇳 中文</a
+                >中文</a
               >
             </div>
           </div>
@@ -544,80 +534,67 @@
                 }
               }
             </style>
-            <img
-              src="assets/images/food-delivery.png"
+            <img width="1024" height="1024" src="assets/images/food-delivery.webp"
               class="slide-img"
               alt="Burger"
               loading="lazy"
             />
-            <img
-              src="assets/images/Poulet.jpg"
+            <img width="640" height="800" src="assets/images/Poulet.webp"
               class="slide-img"
               alt="Poulet"
               loading="lazy"
             />
-            <img
-              src="assets/images/Sandwich.jpg"
+            <img width="768" height="1024" src="assets/images/Sandwich.webp"
               class="slide-img"
               alt="Sandwich"
               loading="lazy"
             />
-            <img
-              src="assets/images/Hot dog.jpg"
+            <img width="810" height="1440" src="assets/images/Hot dog.webp"
               class="slide-img"
               alt="Hot dog"
               loading="lazy"
             />
-            <img
-              src="assets/images/sauce de manioc.jpg"
+            <img width="1199" height="1353" src="assets/images/sauce de manioc.webp"
               class="slide-img"
               alt="Plat local"
               loading="lazy"
             />
-            <img
-              src="assets/images/jus de gig.jpg"
+            <img width="696" height="522" src="assets/images/jus de gig.webp"
               class="slide-img"
               alt="Jus de gig"
               loading="lazy"
             />
-            <img
-              src="assets/images/lafoudi poisson fumé.jpg"
+            <img width="194" height="182" src="assets/images/lafoudi poisson fumé.webp"
               class="slide-img"
               alt="Lafoudi poisson fumé"
               loading="lazy"
             />
-            <img
-              src="assets/images/lafoudi.jpg"
+            <img width="225" height="225" src="assets/images/lafoudi.webp"
               class="slide-img"
               alt="Lafoudi"
               loading="lazy"
             />
-            <img
-              src="assets/images/Mango.jpg"
+            <img width="1024" height="1332" src="assets/images/Mango.webp"
               class="slide-img"
               alt="Mango"
               loading="lazy"
             />
-            <img
-              src="assets/images/Or.jpg"
+            <img width="500" height="500" src="assets/images/Or.webp"
               class="slide-img"
               alt="Or"
               loading="lazy"
             />
-            <img
-              src="assets/images/Pomme.jpg"
+            <img width="640" height="653" src="assets/images/Pomme.webp"
               class="slide-img"
               alt="Pomme"
               loading="lazy"
             />
-            <img
-              src="assets/images/sauce poisson.jpg"
+            <img width="405" height="720" src="assets/images/sauce poisson.webp"
               class="slide-img"
               alt="Sauce poisson"
               loading="lazy"
             />
-            <img
-              src="assets/images/téléchargement.jpg"
+            <img width="148" height="148" src="assets/images/téléchargement.webp"
               class="slide-img"
               alt="Plat"
               loading="lazy"
@@ -630,7 +607,8 @@
           <h2
             style="
               font-family: &quot;Poppins&quot;, sans-serif;
-              font-size: 2.5rem;
+              font-size: clamp(2rem, 1.4rem + 3vw, 2.5rem);
+    text-wrap: balance;
               color: var(--color-secondary);
             "
           >
@@ -714,11 +692,10 @@
       <!-- Modals -->
       <div
         id="modal-locaux"
-        class="cuisine-modal"
-        onclick="closeModal(event, 'modal-locaux')"
+        class="cuisine-modal" onclick="closeModal(event, 'modal-locaux')"
       >
-        <div class="modal-content" onclick="event.stopPropagation()">
-          <span class="modal-close" onclick="closeModal(null, 'modal-locaux')"
+        <div class="modal-content modal-content-stop">
+          <span class="modal-close" onclick="closeModal(event, 'modal-locaux')"
             >&times;</span
           >
           <div class="modal-header">
@@ -727,96 +704,84 @@
           </div>
           <div class="modal-gallery">
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/lafoudi.jpg"
+              <img width="225" height="225" src="assets/images/lafoudi.webp"
                 alt="Lafidi"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Lafidi</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/lafoudi poisson fumé.jpg"
+              <img width="194" height="182" src="assets/images/lafoudi poisson fumé.webp"
                 alt="Lafidi Poisson Fumé"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Lafidi Poisson Fumé</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/sauce de manioc.jpg"
+              <img width="1199" height="1353" src="assets/images/sauce de manioc.webp"
                 alt="Sauce Feuille Manioc"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Sauce Feuille Manioc</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/sauce poisson.jpg"
+              <img width="405" height="720" src="assets/images/sauce poisson.webp"
                 alt="Sauce Poisson"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Sauce Poisson</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Fouti melang.jpg"
+              <img width="715" height="693" src="assets/images/Fouti melang.webp"
                 alt="Fouti Mélangé"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Fouti Mélangé</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/fouti djakatou.jpg"
+              <img width="736" height="733" src="assets/images/fouti djakatou.webp"
                 alt="Fouti Djakatou"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Fouti Djakatou</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Riz au graz au poisson.jpg"
+              <img width="551" height="960" src="assets/images/Riz au graz au poisson.webp"
                 alt="Riz au Gras au Poisson"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Riz au Gras au Poisson</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Riz sau.jpg"
+              <img width="600" height="600" src="assets/images/Riz sau.webp"
                 alt="Riz Sauce"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Riz Sauce</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/foufou manioc.jpg"
+              <img width="765" height="1020" src="assets/images/foufou manioc.webp"
                 alt="Foufou Manioc"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Foufou Manioc</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Mafé de Boeuf.jpg"
+              <img width="204" height="192" src="assets/images/Mafé de Boeuf.webp"
                 alt="Mafé de Boeuf"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Mafé de Boeuf</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/sauce Arachide.jpg"
+              <img width="1161" height="2064" src="assets/images/sauce Arachide.webp"
                 alt="Sauce Arachide"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Sauce Arachide</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Poiss.jpg"
+              <img width="600" height="600" src="assets/images/Poiss.webp"
                 alt="Poisson Braisé"
                 loading="lazy"
               />
@@ -827,11 +792,10 @@
       </div>
       <div
         id="modal-fastfood"
-        class="cuisine-modal"
-        onclick="closeModal(event, 'modal-fastfood')"
+        class="cuisine-modal" onclick="closeModal(event, 'modal-fastfood')"
       >
-        <div class="modal-content" onclick="event.stopPropagation()">
-          <span class="modal-close" onclick="closeModal(null, 'modal-fastfood')"
+        <div class="modal-content modal-content-stop">
+          <span class="modal-close" onclick="closeModal(event, 'modal-fastfood')"
             >&times;</span
           >
           <div class="modal-header">
@@ -840,48 +804,42 @@
           </div>
           <div class="modal-gallery">
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/food-delivery.png"
+              <img width="1024" height="1024" src="assets/images/food-delivery.webp"
                 alt="Burger Maison"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Burger Maison</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Burger poulet.jpg"
+              <img width="736" height="1104" src="assets/images/Burger poulet.webp"
                 alt="Burger Poulet"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Burger Poulet</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Hot dog.jpg"
+              <img width="810" height="1440" src="assets/images/Hot dog.webp"
                 alt="Hot Dog"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Hot Dog</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/s cv.jpg"
+              <img width="720" height="960" src="assets/images/s cv.webp"
                 alt="Sandwich Chaud"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Sandwich Chaud</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/s p m.jpg"
+              <img width="1000" height="1500" src="assets/images/s p m.webp"
                 alt="Plat du Moment"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Plat du Moment</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/jelly-tteokbokki-1607479_1920.jpg"
+              <img width="1920" height="1280" src="assets/images/jelly-tteokbokki-1607479_1920.webp"
                 alt="Snacks Épicés"
                 loading="lazy"
               />
@@ -892,11 +850,10 @@
       </div>
       <div
         id="modal-pizzas"
-        class="cuisine-modal"
-        onclick="closeModal(event, 'modal-pizzas')"
+        class="cuisine-modal" onclick="closeModal(event, 'modal-pizzas')"
       >
-        <div class="modal-content" onclick="event.stopPropagation()">
-          <span class="modal-close" onclick="closeModal(null, 'modal-pizzas')"
+        <div class="modal-content modal-content-stop">
+          <span class="modal-close" onclick="closeModal(event, 'modal-pizzas')"
             >&times;</span
           >
           <div class="modal-header">
@@ -905,24 +862,21 @@
           </div>
           <div class="modal-gallery">
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Sandwich.jpg"
+              <img width="768" height="1024" src="assets/images/Sandwich.webp"
                 alt="Sandwich Spécial"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Sandwich Spécial</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/cham.jpg"
+              <img width="600" height="600" src="assets/images/cham.webp"
                 alt="Snack Chaud"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Snack Chaud</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/téléchargement.jpg"
+              <img width="148" height="148" src="assets/images/téléchargement.webp"
                 alt="Assortiment"
                 loading="lazy"
               />
@@ -933,13 +887,10 @@
       </div>
       <div
         id="modal-grillades"
-        class="cuisine-modal"
-        onclick="closeModal(event, 'modal-grillades')"
+        class="cuisine-modal" onclick="closeModal(event, 'modal-grillades')"
       >
-        <div class="modal-content" onclick="event.stopPropagation()">
-          <span
-            class="modal-close"
-            onclick="closeModal(null, 'modal-grillades')"
+        <div class="modal-content modal-content-stop">
+          <span class="modal-close" onclick="closeModal(event, 'modal-grillades')"
             >&times;</span
           >
           <div class="modal-header">
@@ -948,32 +899,28 @@
           </div>
           <div class="modal-gallery">
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Poulet.jpg"
+              <img width="640" height="800" src="assets/images/Poulet.webp"
                 alt="Poulet Braisé"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Poulet Braisé</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Burger poulet.jpg"
+              <img width="736" height="1104" src="assets/images/Burger poulet.webp"
                 alt="Poulet Burger"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Poulet Burger</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Poiss.jpg"
+              <img width="600" height="600" src="assets/images/Poiss.webp"
                 alt="Poisson Grillé"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Poisson Grillé</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/910e0ae2b9b46e3958bc66fe660406eb.jpg"
+              <img width="1062" height="787" src="assets/images/910e0ae2b9b46e3958bc66fe660406eb.webp"
                 alt="Grillade Viande"
                 loading="lazy"
               />
@@ -984,11 +931,10 @@
       </div>
       <div
         id="modal-healthy"
-        class="cuisine-modal"
-        onclick="closeModal(event, 'modal-healthy')"
+        class="cuisine-modal" onclick="closeModal(event, 'modal-healthy')"
       >
-        <div class="modal-content" onclick="event.stopPropagation()">
-          <span class="modal-close" onclick="closeModal(null, 'modal-healthy')"
+        <div class="modal-content modal-content-stop">
+          <span class="modal-close" onclick="closeModal(event, 'modal-healthy')"
             >&times;</span
           >
           <div class="modal-header">
@@ -997,92 +943,81 @@
           </div>
           <div class="modal-gallery">
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/salade carotte.jpg"
+              <img width="1080" height="1350" src="assets/images/salade carotte.webp"
                 alt="Salade Carottes"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Salade Carottes</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/salade de con.jpg"
+              <img width="736" height="1103" src="assets/images/salade de con.webp"
                 alt="Salade Concombre"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Salade Concombre</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/salade de man.jpg"
+              <img width="766" height="960" src="assets/images/salade de man.webp"
                 alt="Salade Mangue"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Salade Mangue</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Mango.jpg"
+              <img width="1024" height="1332" src="assets/images/Mango.webp"
                 alt="Mangue Fraîche"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Mangue Fraîche</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Ananas.jpg"
+              <img width="522" height="1082" src="assets/images/Ananas.webp"
                 alt="Ananas Frais"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Ananas Frais</div>
             </div>
             <div class="modal-gallery-item">
-              <img src="assets/images/Pomme.jpg" alt="Pommes" loading="lazy" />
+              <img width="640" height="653" src="assets/images/Pomme.webp" alt="Pommes" loading="lazy" />
               <div class="modal-gallery-caption">Pommes</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/pastèque.jpg"
+              <img width="400" height="400" src="assets/images/pastèque.webp"
                 alt="Pastèque"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Pastèque Fraîche</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/carrote.jpg"
+              <img width="736" height="981" src="assets/images/carrote.webp"
                 alt="Carottes"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Carottes</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/foto-canvas-store-zucchini-8346555_1920.jpg"
+              <img width="1920" height="1282" src="assets/images/foto-canvas-store-zucchini-8346555_1920.webp"
                 alt="Légumes Frais"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Légumes Frais</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/dfespi-fruit-192753_1920.jpg"
+              <img width="1920" height="1080" src="assets/images/dfespi-fruit-192753_1920.webp"
                 alt="Corbeille de Fruits"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Corbeille de Fruits</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/oiluarb_ai-fruits-264387_1920.jpg"
+              <img width="1920" height="1285" src="assets/images/oiluarb_ai-fruits-264387_1920.webp"
                 alt="Assortiment Fruits"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Assortiment Fruits</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/couleur-pineapple-10255724_1920.jpg"
+              <img width="1280" height="1920" src="assets/images/couleur-pineapple-10255724_1920.webp"
                 alt="Ananas Coloré"
                 loading="lazy"
               />
@@ -1093,11 +1028,10 @@
       </div>
       <div
         id="modal-desserts"
-        class="cuisine-modal"
-        onclick="closeModal(event, 'modal-desserts')"
+        class="cuisine-modal" onclick="closeModal(event, 'modal-desserts')"
       >
-        <div class="modal-content" onclick="event.stopPropagation()">
-          <span class="modal-close" onclick="closeModal(null, 'modal-desserts')"
+        <div class="modal-content modal-content-stop">
+          <span class="modal-close" onclick="closeModal(event, 'modal-desserts')"
             >&times;</span
           >
           <div class="modal-header">
@@ -1106,20 +1040,18 @@
           </div>
           <div class="modal-gallery">
             <div class="modal-gallery-item">
-              <img src="assets/images/Gateau.jpg" alt="Gâteau" loading="lazy" />
+              <img width="736" height="705" src="assets/images/Gateau.webp" alt="Gâteau" loading="lazy" />
               <div class="modal-gallery-caption">Gâteau Maison</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/part de gateau.jpg"
+              <img width="736" height="920" src="assets/images/part de gateau.webp"
                 alt="Part de Gâteau"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Part de Gâteau</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/jus de gig.jpg"
+              <img width="696" height="522" src="assets/images/jus de gig.webp"
                 alt="Jus de Gingembre"
                 loading="lazy"
               />
@@ -1128,48 +1060,42 @@
               </div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/jus de bisap.jpg"
+              <img width="847" height="993" src="assets/images/jus de bisap.webp"
                 alt="Jus de Bissap"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Jus de Bissap</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/JUS DE BOUY.jpg"
+              <img width="1008" height="1792" src="assets/images/JUS DE BOUY.webp"
                 alt="Jus de Bouye"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Jus de Bouye</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Jus d'ananas.jpg"
+              <img width="736" height="1104" src="assets/images/Jus d'ananas.webp"
                 alt="Jus d'Ananas"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Jus d'Ananas</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/Or.jpg"
+              <img width="500" height="500" src="assets/images/Or.webp"
                 alt="Jus d'Orange"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Jus d'Orange Pressé</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/ajale-smoothie-1578253_1920.jpg"
+              <img width="1920" height="1272" src="assets/images/ajale-smoothie-1578253_1920.webp"
                 alt="Smoothie"
                 loading="lazy"
               />
               <div class="modal-gallery-caption">Smoothie Tropical</div>
             </div>
             <div class="modal-gallery-item">
-              <img
-                src="assets/images/stevepb-lime-907124_1920.jpg"
+              <img width="1920" height="1280" src="assets/images/stevepb-lime-907124_1920.webp"
                 alt="Citron Vert"
                 loading="lazy"
               />
@@ -1204,8 +1130,7 @@
               "
             >
               <span class="footer-img-wrap"
-                ><img
-                  src="assets/images/logo.png"
+                ><img width="1254" height="1254" src="assets/images/logo.webp"
                   alt="logo"
                   class="footer-logo-img" /></span
               >alfa<span>.</span>
@@ -1287,7 +1212,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  ><svg
+                ><svg
                     width="20"
                     height="20"
                     viewBox="0 0 24 24"
@@ -1306,7 +1231,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  ><svg
+                ><svg
                     width="20"
                     height="20"
                     viewBox="0 0 24 24"
@@ -1342,9 +1267,7 @@
         <div class="footer-bottom">
           <p class="copyright">
             &copy;
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
+            <span data-annee-courante></span>
             alfa. Tous droits réservés.
           </p>
           <div class="service-status">
@@ -1356,64 +1279,8 @@
     </footer>
 
     <!-- GTranslate Script -->
-    <script type="text/javascript">
-      function googleTranslateElementInit2() {
-        new google.translate.TranslateElement(
-          { pageLanguage: "fr", autoDisplay: false },
-          "google_translate_element2",
-        );
-      }
-      function doGTranslate(lang_pair) {
-        if (lang_pair.value) lang_pair = lang_pair.value;
-        if (lang_pair == "") return;
-        var lang = lang_pair.split("|")[1];
-        var teCombo;
-        var sel = document.getElementsByTagName("select");
-        for (var i = 0; i < sel.length; i++) {
-          if (sel[i].className.indexOf("goog-te-combo") != -1) {
-            teCombo = sel[i];
-            break;
-          }
-        }
-        if (
-          document.getElementById("google_translate_element2") == null ||
-          document.getElementById("google_translate_element2").innerHTML
-            .length == 0 ||
-          !teCombo ||
-          teCombo.length == 0 ||
-          teCombo.innerHTML.length == 0
-        ) {
-          setTimeout(function () {
-            doGTranslate(lang_pair);
-          }, 500);
-        } else {
-          teCombo.value = lang;
-          GTranslateFireEvent(teCombo, "change");
-          GTranslateFireEvent(teCombo, "change");
-          // Update all current-lang spans
-          const spans = document.querySelectorAll(".current-lang");
-          spans.forEach((span) => {
-            span.textContent = lang === "zh-CN" ? "ZH" : lang.toUpperCase();
-          });
-        }
-      }
-      function GTranslateFireEvent(element, event) {
-        try {
-          if (document.createEventObject) {
-            var evt = document.createEventObject();
-            element.fireEvent("on" + event, evt);
-          } else {
-            var evt = document.createEvent("HTMLEvents");
-            evt.initEvent(event, true, true);
-            element.dispatchEvent(evt);
-          }
-        } catch (e) {}
-      }
-    </script>
-    <script
-      type="text/javascript"
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"
-    ></script>
+    
+    
 
     <!-- Bannière de consentement aux cookies -->
     <div
@@ -1529,5 +1396,66 @@
     </div>
 
     <script src="js/cookies-consent.js"></script>
+      <script src="js/interactions.js" defer></script>
+      <script src="js/form-handler.js" defer></script>
+      
+      
+      <script src="js/main.js" defer></script>
+  
+    <!-- GTranslate Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit2() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "fr", autoDisplay: false },
+          "google_translate_element2",
+        );
+      }
+      function doGTranslate(lang_pair) {
+        if (lang_pair.value) lang_pair = lang_pair.value;
+        if (lang_pair == "") return;
+        var lang = lang_pair.split("|")[1];
+        var teCombo;
+        var sel = document.getElementsByTagName("select");
+        for (var i = 0; i < sel.length; i++) {
+          if (sel[i].className.indexOf("goog-te-combo") != -1) {
+            teCombo = sel[i];
+            break;
+          }
+        }
+        if (
+          document.getElementById("google_translate_element2") == null ||
+          document.getElementById("google_translate_element2").innerHTML.length == 0 ||
+          !teCombo ||
+          teCombo.length == 0 ||
+          teCombo.innerHTML.length == 0
+        ) {
+          setTimeout(function () {
+            doGTranslate(lang_pair);
+          }, 50);
+        } else {
+          teCombo.value = lang;
+          GTranslateFireEvent(teCombo, "change");
+          GTranslateFireEvent(teCombo, "change");
+          const spans = document.querySelectorAll(".current-lang");
+          spans.forEach((span) => {
+            span.textContent = lang === "zh-CN" ? "ZH" : lang.toUpperCase();
+          });
+        }
+      }
+      function GTranslateFireEvent(element, event) {
+        try {
+          if (document.createEventObject) {
+            var evt = document.createEventObject();
+            element.fireEvent("on" + event, evt);
+          } else {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent(event, true, true);
+            element.dispatchEvent(evt);
+          }
+        } catch (e) {}
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+
   </body>
 </html>
