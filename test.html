@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <a href="#main-content" class="sr-only">Aller au contenu principal</a>
+<span id="myspan" onclick="myFunc(event)">Click me</span>
+<script>
+function myFunc(event) {
+  console.log("target:", event.target.tagName);
+  console.log("currentTarget:", event.currentTarget ? event.currentTarget.tagName : "null");
+  console.log("target === currentTarget:", event.target === event.currentTarget);
+}
+</script>
+</body>
+</html>

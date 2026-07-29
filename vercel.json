@@ -33,5 +33,11 @@
       "destination": "/404.html",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/404.html"
+    }
   ]
 }

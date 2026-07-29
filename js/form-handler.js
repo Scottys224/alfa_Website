@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (filteredHistory.length !== history.length) {
       localStorage.setItem("alfaFormSubmissions", JSON.stringify(filteredHistory));
     }
-  } catch(e) {}
+  } catch(e) { console.warn("Erreur init form-handler:", e); }
 
   document.querySelectorAll("[data-alfa-form]").forEach((form) => {
     form.addEventListener("submit", async (e) => {
@@ -25,6 +25,52 @@ document.addEventListener('DOMContentLoaded', () => {
       if (form.querySelector('.h-captcha') && jetonCaptcha && !jetonCaptcha.value) {
         alert("Veuillez valider le contrôle anti-robot avant d'envoyer.");
         return;
+      }
+
+      // Nettoyage des erreurs précédentes
+      form.querySelectorAll('.email-error-msg').forEach(el => el.remove());
+      form.querySelectorAll('input').forEach(input => {
+        if (input.dataset.originalBorder !== undefined) {
+          input.style.borderColor = input.dataset.originalBorder;
+        }
+      });
+
+      // Validation stricte des emails (minuscules uniquement)
+      let hasUppercaseEmail = false;
+      let firstInvalidInput = null;
+      
+      form.querySelectorAll('input').forEach(input => {
+        const isEmailField = input.type === 'email' || input.name === 'email' || (input.value && input.value.includes('@'));
+        if (isEmailField && input.value && /[A-Z]/.test(input.value)) {
+          hasUppercaseEmail = true;
+          if (!firstInvalidInput) firstInvalidInput = input;
+          
+          // Sauvegarder la bordure originale si ce n'est pas déjà fait
+          if (input.dataset.originalBorder === undefined) {
+            input.dataset.originalBorder = input.style.borderColor || '';
+          }
+          input.style.borderColor = '#dc3545'; // Rouge standard
+          
+          // Créer le message d'erreur
+          const errorMsg = document.createElement('span');
+          errorMsg.className = 'email-error-msg';
+          errorMsg.style.color = '#dc3545';
+          errorMsg.style.fontSize = '0.85rem';
+          errorMsg.style.marginTop = '4px';
+          errorMsg.style.display = 'block';
+          errorMsg.innerText = "Veuillez saisir votre e-mail en minuscules uniquement.";
+          
+          // L'insérer juste après le champ
+          input.parentNode.insertBefore(errorMsg, input.nextSibling);
+        }
+      });
+
+      if (hasUppercaseEmail) {
+        if (firstInvalidInput) {
+          firstInvalidInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstInvalidInput.focus();
+        }
+        return; // On bloque l'envoi sans utiliser d'alert()
       }
 
       // Protection UX (Max 4 requêtes par 3 minutes)
@@ -62,7 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (data.success) {
           form.style.display = "none";
-          document.getElementById(form.dataset.succes).style.display = "block";
+          const blocSucces = document.getElementById(form.dataset.succes);
+          if (blocSucces) {
+            blocSucces.style.display = "block";
+          } else {
+            console.warn(`Bloc de confirmation introuvable : #${form.dataset.succes}`);
+            alert("Votre message a bien été envoyé. Merci !");
+          }
         } else {
           throw new Error(data.message || "Erreur de l'API");
         }

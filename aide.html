@@ -62,7 +62,7 @@
       .help-sidebar {
         position: sticky;
         top: 100px;
-        max-height: calc(100vh - 120px); /* Hauteur maximale selon l'écran */
+        max-height: calc(100dvh - 120px); /* Hauteur maximale selon l'écran */
         overflow-y: auto; /* Active le défilement indépendant */
         background-color: #f8fafc; /* Fond très clair pour le différencier */
         padding: 24px;
@@ -147,6 +147,8 @@
         .help-sidebar {
           position: static;
           margin-bottom: 32px;
+          max-height: none;
+          overflow-y: visible;
         }
       }
       mark {
@@ -185,8 +187,39 @@
   
     <link rel="preconnect" href="https://translate.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://translate.google.com" crossorigin>
-</head>
+
+    <!-- Anti-Flash Google Translate -->
+    <style id="anti-flash-style">
+      html.is-translating:not(.translated-ltr) body {
+          opacity: 0;
+          visibility: hidden;
+      }
+    </style>
+    <script>
+      if (document.cookie.indexOf('googtrans=') !== -1 && document.cookie.indexOf('googtrans=/fr/fr') === -1) {
+          document.documentElement.classList.add('is-translating');
+          setTimeout(function() {
+              document.documentElement.classList.remove('is-translating');
+          }, 800);
+      }
+    </script>
+    <!-- Fin Anti-Flash -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "alfa",
+      "description": "Commandes de nourriture, livraisons et déplacements en Guinée",
+      "url": "https://www.alfa.com.gn/",
+      "telephone": "+224614878886",
+      "areaServed": { "@type": "City", "name": "Conakry", "addressCountry": "GN" }
+    }
+    </script>
+    <link rel="preload" href="assets/fonts/font-7.woff2" as="font" type="font/woff2" crossorigin>
+  </head>
   <body>
+    <a href="#main-content" class="sr-only">Aller au contenu principal</a>
     <!-- EN-TÊTE -->
     <header class="header">
       <div class="container nav-container">
@@ -195,8 +228,8 @@
           class="logo"
           style="display: flex; align-items: center; gap: 4px"
           ><span class="logo-img-wrap"
-            ><img width="1254" height="1254" src="assets/images/logo.webp"
-              alt="logo"
+            ><img decoding="async" width="1254" height="1254" src="assets/images/logo.webp" srcset="assets/images/logo-400.webp 400w" sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 300px"
+              alt=""
               class="header-logo-img" /></span
           >alfa<span class="dot">.</span></a
         >
@@ -261,24 +294,9 @@
               <span class="current-lang notranslate">FR</span>
             </button>
             <div class="dropdown-content lang-dropdown notranslate">
-              <a
-                href="javascript:void(0);"
-                onclick="doGTranslate('fr|fr'); return false;" class="lang-option"
-                title="Français"
-                >Français</a
-              >
-              <a
-                href="javascript:void(0);"
-                onclick="doGTranslate('fr|en'); return false;" class="lang-option"
-                title="English"
-                >English</a
-              >
-              <a
-                href="javascript:void(0);"
-                onclick="doGTranslate('fr|zh-CN'); return false;" class="lang-option"
-                title="Chinese"
-                >中文</a
-              >
+              <button type="button" onclick="doGTranslate('fr|fr');" class="lang-option" title="Français" style="background: none; border: none; cursor: pointer; text-align: left; font: inherit; width: 100%; color: var(--text-heading);">Français</button>
+              <button type="button" onclick="doGTranslate('fr|en');" class="lang-option" title="English" style="background: none; border: none; cursor: pointer; text-align: left; font: inherit; width: 100%; color: var(--text-heading);">English</button>
+              <button type="button" onclick="doGTranslate('fr|zh-CN');" class="lang-option" title="Chinese" style="background: none; border: none; cursor: pointer; text-align: left; font: inherit; width: 100%; color: var(--text-heading);">中文</button>
             </div>
           </div>
           <!-- GTranslate Wrapper -->
@@ -302,7 +320,7 @@
         </button>
       </div>
     </header>
-    <main>
+    <main id="main-content">
       <section class="help-hero">
         <div class="container">
           <h1>Comment pouvons-nous vous aider ?</h1>
@@ -743,8 +761,8 @@
               "
             >
               <span class="footer-img-wrap"
-                ><img width="1254" height="1254" src="assets/images/logo.webp"
-                  alt="logo"
+                ><img decoding="async" width="1254" height="1254" src="assets/images/logo.webp" srcset="assets/images/logo-400.webp 400w" sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 300px"
+                  alt=""
                   class="footer-logo-img" /></span
               >alfa<span>.</span>
             </h2>
@@ -754,7 +772,7 @@
           </div>
           <div class="footer-links-grid">
             <div class="footer-column">
-              <h4>alfa</h4>
+              <h3>alfa</h3>
               <a href="index.html#services">À propos d'alfa</a>
               <a href="#">Actualités</a>
               <a href="aide.html">Centre d'aide</a>
@@ -762,12 +780,12 @@
               <a href="telechargement.html">Télécharger l'application</a>
             </div>
             <div class="footer-column">
-              <h4>Partenaires</h4>
+              <h3>Partenaires</h3>
               <a href="commercant.html">Devenir commerçant</a>
               <a href="chauffeur.html">Devenir chauffeur</a>
             </div>
             <div class="footer-column">
-              <h4>Légal</h4>
+              <h3>Légal</h3>
               <a href="cgu.html">Conditions d'utilisation</a>
               <a href="confidentialite.html">Politique de confidentialité</a>
               <a href="cookies.html">Politique relative aux cookies</a>
@@ -781,7 +799,7 @@
               </button>
             </div>
             <div class="footer-column footer-contact">
-              <h4>Contact</h4>
+              <h3>Contact</h3>
               <a href="tel:+224614878886"
                 ><svg
                   width="18"
@@ -822,8 +840,8 @@
               <div class="footer-social">
                 <a
                   href="https://www.facebook.com/alfa/posts/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target="_blank" rel="noopener noreferrer"
+                  
                   aria-label="Facebook"
                 ><svg
                     width="20"
@@ -841,8 +859,8 @@
                 ></a>
                 <a
                   href="https://www.instagram.com/alfa.guinee/reels/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target="_blank" rel="noopener noreferrer"
+                  
                   aria-label="Instagram"
                 ><svg
                     width="20"
@@ -1142,58 +1160,7 @@
       
   
     <!-- GTranslate Script -->
-    <script type="text/javascript">
-      function googleTranslateElementInit2() {
-        new google.translate.TranslateElement(
-          { pageLanguage: "fr", autoDisplay: false },
-          "google_translate_element2",
-        );
-      }
-      function doGTranslate(lang_pair) {
-        if (lang_pair.value) lang_pair = lang_pair.value;
-        if (lang_pair == "") return;
-        var lang = lang_pair.split("|")[1];
-        var teCombo;
-        var sel = document.getElementsByTagName("select");
-        for (var i = 0; i < sel.length; i++) {
-          if (sel[i].className.indexOf("goog-te-combo") != -1) {
-            teCombo = sel[i];
-            break;
-          }
-        }
-        if (
-          document.getElementById("google_translate_element2") == null ||
-          document.getElementById("google_translate_element2").innerHTML.length == 0 ||
-          !teCombo ||
-          teCombo.length == 0 ||
-          teCombo.innerHTML.length == 0
-        ) {
-          setTimeout(function () {
-            doGTranslate(lang_pair);
-          }, 50);
-        } else {
-          teCombo.value = lang;
-          GTranslateFireEvent(teCombo, "change");
-          GTranslateFireEvent(teCombo, "change");
-          const spans = document.querySelectorAll(".current-lang");
-          spans.forEach((span) => {
-            span.textContent = lang === "zh-CN" ? "ZH" : lang.toUpperCase();
-          });
-        }
-      }
-      function GTranslateFireEvent(element, event) {
-        try {
-          if (document.createEventObject) {
-            var evt = document.createEventObject();
-            element.fireEvent("on" + event, evt);
-          } else {
-            var evt = document.createEvent("HTMLEvents");
-            evt.initEvent(event, true, true);
-            element.dispatchEvent(evt);
-          }
-        } catch (e) {}
-      }
-    </script>
+    <script src="js/gtranslate.js"></script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
 
   </body>

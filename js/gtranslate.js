@@ -4,7 +4,8 @@ function googleTranslateElementInit2() {
     "google_translate_element2",
   );
 }
-function doGTranslate(lang_pair) {
+
+function doGTranslate(lang_pair, tentative = 0) {
   if (lang_pair.value) lang_pair = lang_pair.value;
   if (lang_pair == "") return;
   var lang = lang_pair.split("|")[1];
@@ -18,17 +19,21 @@ function doGTranslate(lang_pair) {
   }
   if (
     document.getElementById("google_translate_element2") == null ||
-    document.getElementById("google_translate_element2").innerHTML
-      .length == 0 ||
+    document.getElementById("google_translate_element2").innerHTML.length == 0 ||
     !teCombo ||
     teCombo.length == 0 ||
     teCombo.innerHTML.length == 0
   ) {
+    if (tentative >= 20) {
+      console.warn("Google Translate indisponible après 20 tentatives.");
+      return;
+    }
     setTimeout(function () {
-      doGTranslate(lang_pair);
+      doGTranslate(lang_pair, tentative + 1);
     }, 500);
   } else {
     teCombo.value = lang;
+    document.documentElement.lang = lang === "zh-CN" ? "zh-CN" : lang;
     GTranslateFireEvent(teCombo, "change");
     GTranslateFireEvent(teCombo, "change");
     // Update all current-lang spans
@@ -38,6 +43,7 @@ function doGTranslate(lang_pair) {
     });
   }
 }
+
 function GTranslateFireEvent(element, event) {
   try {
     if (document.createEventObject) {
@@ -48,5 +54,5 @@ function GTranslateFireEvent(element, event) {
       evt.initEvent(event, true, true);
       element.dispatchEvent(evt);
     }
-  } catch (e) {}
+  } catch (e) { console.warn("Erreur GTranslate:", e); }
 }

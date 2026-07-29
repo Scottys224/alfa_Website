@@ -42,24 +42,25 @@ document.addEventListener("DOMContentLoaded", () => {
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 // If we are on mobile and the menu is open, simulate a click on the burger to close it
-                if (window.innerWidth <= 768 && mobileMenuBtn.getAttribute("aria-expanded") === "true") {
+                if (window.innerWidth <= 992 && mobileMenuBtn.getAttribute("aria-expanded") === "true") {
                     mobileMenuBtn.click();
                 }
             });
         });
         
+        function fermerMenuMobile() {
+            mobileMenuBtn.setAttribute("aria-expanded", "false");
+            navLinks.removeAttribute("style");
+            mobileMenuBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
+        }
+
         // Reset on resize
         window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'row';
-                navLinks.style.position = 'static';
-                navLinks.style.background = 'transparent';
-                navLinks.style.padding = '0';
-                navLinks.style.boxShadow = 'none';
-                navLinks.style.alignItems = 'center';
-            } else if (mobileMenuBtn.getAttribute("aria-expanded") !== "true") {
-                navLinks.style.display = 'none';
+            if (window.innerWidth > 992) {
+                navLinks.removeAttribute("style");
+                mobileMenuBtn.setAttribute("aria-expanded", "false");
+            } else {
+                fermerMenuMobile();
             }
         });
     }
