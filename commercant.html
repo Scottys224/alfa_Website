@@ -305,6 +305,7 @@
                     name="nom"
                     class="form-control"
                     required
+                    maxlength="50"
                     placeholder="Ex: Mamadou Diallo"
                   / autocomplete="family-name">
                 </div>
@@ -316,7 +317,9 @@
                     name="telephone"
                     class="form-control"
                     required
+                    maxlength="20"
                     placeholder="Ex: 620 00 00 00"
+                    oninput="this.value = this.value.replace(/[^0-9\s\+\-]/g, '');"
                   />
                 </div>
               </div>
@@ -328,6 +331,7 @@
                     id="email"
                     name="email"
                     class="form-control"
+                    maxlength="100"
                     placeholder="contact@moncommerce.com"
                   / autocomplete="email">
                 </div>
@@ -339,6 +343,7 @@
                     name="commerce"
                     class="form-control"
                     required
+                    maxlength="100"
                     placeholder="Ex: Restaurant Le Bonheur"
                   />
                 </div>
@@ -367,6 +372,7 @@
                     name="quartier"
                     class="form-control"
                     required
+                    maxlength="50"
                     placeholder="Ex: Kipé, Conakry"
                   />
                 </div>
@@ -379,6 +385,7 @@
                   name="adresse"
                   class="form-control"
                   required
+                  maxlength="150"
                   placeholder="Description détaillée de l'emplacement"
                 />
               </div>
@@ -391,6 +398,7 @@
                   name="commentaire"
                   class="form-control"
                   rows="4"
+                  maxlength="1000"
                   placeholder="Dites-nous en plus sur vos produits..."
                 ></textarea>
               </div>
@@ -496,6 +504,7 @@
               <a href="confidentialite.html">Politique de confidentialité</a>
               <a href="cookies.html">Politique relative aux cookies</a>
               <a href="mentions-legales.html">Mentions légales</a>
+              <a href="Suppression_Compte_Alfa.html">Suppression de compte</a>
               <button
                 type="button"
                 data-open-cookie-settings

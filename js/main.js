@@ -106,4 +106,73 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+    // 4. Logique de validation de formulaire: empêcher de cocher le consentement si tout n'est pas rempli
+    const consentCheckboxes = document.querySelectorAll('input[type="checkbox"][name="consentement"]');
+    consentCheckboxes.forEach(checkbox => {
+        const form = checkbox.closest('form');
+        if (form) {
+            // Identifier tous les champs requis, sauf la checkbox elle-même
+            const requiredFields = Array.from(form.querySelectorAll('input[required], select[required], textarea[required]')).filter(el => el !== checkbox);
+            
+            if (requiredFields.length > 0) {
+                // Fonction pour vérifier l'état des champs
+                const checkFields = () => {
+                    const allFilled = requiredFields.every(field => field.value.trim() !== '');
+                    checkbox.disabled = !allFilled;
+                    if (!allFilled) {
+                        checkbox.checked = false; // On décoche automatiquement si c'est incomplet
+                    }
+                };
+
+                // Écouter les changements sur chaque champ requis
+                requiredFields.forEach(field => {
+                    field.addEventListener('input', checkFields);
+                    field.addEventListener('change', checkFields);
+                });
+
+                // Vérification initiale au chargement
+                checkFields();
+            }
+        }
+    });
+
+    // 5. Alerte pour le réseau social X (Twitter) en construction
+    const twitterLinks = document.querySelectorAll('a[aria-label="X (Twitter)"]');
+    twitterLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Empêche de scroller en haut de la page
+            
+            // Retirer l'ancien toast s'il existe
+            let existingToast = document.getElementById("global-toast");
+            if (existingToast) existingToast.remove();
+            
+            // Créer le nouveau toast
+            const toast = document.createElement("div");
+            toast.id = "global-toast";
+            toast.className = "global-toast";
+            toast.innerHTML = `
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 4px;">
+                    <path d="M4 4l11.73 16h5L9 4z"></path>
+                    <path d="M4 20l6.76-6.76"></path>
+                </svg>
+                <span>Notre page officielle X (Twitter) est en cours de création.<br><br>Elle sera très bientôt disponible !</span>
+                <button class="toast-btn" id="global-toast-close">OK</button>
+            `;
+            document.body.appendChild(toast);
+            
+            // Animation d'apparition
+            setTimeout(() => {
+                toast.classList.add("show");
+            }, 10);
+            
+            // Gérer le clic sur le bouton OK pour fermer
+            document.getElementById("global-toast-close").addEventListener("click", () => {
+                toast.classList.remove("show");
+                setTimeout(() => {
+                    if (toast.parentNode) toast.remove();
+                }, 400); // attendre la fin de la transition CSS
+            });
+        });
+    });
 });
+

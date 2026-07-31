@@ -553,6 +553,26 @@
               loading="lazy"
             />
           </div>
+          
+          <script>
+            // Logique de défilement pour les images de nourriture
+            document.addEventListener('DOMContentLoaded', () => {
+              const slides = document.querySelectorAll('.service-visual .slide-img');
+              if (slides.length > 0) {
+                let current = 0;
+                // Initialise
+                slides.forEach(s => s.style.transition = 'opacity 1s ease-in-out');
+                slides[current].style.opacity = 1;
+                
+                // Défilement
+                setInterval(() => {
+                  slides[current].style.opacity = 0;
+                  current = (current + 1) % slides.length;
+                  slides[current].style.opacity = 1;
+                }, 3500);
+              }
+            });
+          </script>
         </div>
       </section>
       <section class="cuisines-section container">
@@ -1147,6 +1167,7 @@
               <a href="confidentialite.html">Politique de confidentialité</a>
               <a href="cookies.html">Politique relative aux cookies</a>
               <a href="mentions-legales.html">Mentions légales</a>
+              <a href="Suppression_Compte_Alfa.html">Suppression de compte</a>
               <button
                 type="button"
                 data-open-cookie-settings

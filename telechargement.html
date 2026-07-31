@@ -4,26 +4,26 @@
     <meta name="theme-color" content="#087f5b" />
 
     <meta charset="UTF-8" />
-    <title>Téléchargez l'Application Alfa - iOS et Android</title>
+    <title>Téléchargez l'Application alfa - iOS et Android</title>
     <meta
       name="description"
-      content="Téléchargez l'application gratuite Alfa sur l'App Store ou Google Play pour accéder à tous nos services en Guinée."
+      content="Téléchargez l'application gratuite alfa sur l'App Store ou Google Play pour accéder à tous nos services en Guinée."
     />
     <link rel="canonical" href="https://www.alfa.com.gn/telechargement.html" />
     <meta
       property="og:title"
-      content="Téléchargez l'Application Alfa - iOS et Android"
+      content="Téléchargez l'Application alfa - iOS et Android"
     />
     <meta
       property="og:description"
-      content="Téléchargez l'application gratuite Alfa sur l'App Store ou Google Play pour accéder à tous nos services en Guinée."
+      content="Téléchargez l'application gratuite alfa sur l'App Store ou Google Play pour accéder à tous nos services en Guinée."
     />
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
       content="https://www.alfa.com.gn/telechargement.html"
     />
-    <meta property="og:site_name" content="Alfa" />
+    <meta property="og:site_name" content="alfa" />
     <meta
       property="og:image"
       content="https://www.alfa.com.gn/assets/og-image.jpg"
@@ -201,6 +201,66 @@
     }
     </script>
     <link rel="preload" href="assets/fonts/font-7.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+      /* Toast Notification UI */
+      .toast-notification {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        background-color: var(--color-primary);
+        color: white;
+        padding: 24px;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(8, 127, 91, 0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 16px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        z-index: 9999;
+        opacity: 0;
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+        pointer-events: none;
+        white-space: normal;
+        width: 90%;
+        max-width: 450px;
+      }
+      
+      .toast-notification.show {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      
+      .toast-btn {
+        margin-top: 8px;
+        padding: 10px 32px;
+        background-color: white;
+        color: var(--color-primary);
+        border: none;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s;
+      }
+      
+      .toast-btn:hover {
+        background-color: #f1f3f5;
+        transform: scale(1.05);
+      }
+      
+      @media (max-width: 768px) {
+        .toast-notification {
+          font-size: 14px;
+          padding: 20px;
+        }
+      }
+    </style>
   </head>
   <body>
     <a href="#main-content" class="sr-only">Aller au contenu principal</a>
@@ -313,9 +373,7 @@
             Téléchargez <span>alfa</span>
           </h1>
           <p class="text-muted" style="max-width: 600px; margin: 0 auto">
-            Choisissez l'application qui correspond à vos besoins. Nos
-            applications sont officiellement vérifiées et disponibles sur les
-            plateformes sécurisées.
+            Choisissez l'application qui correspond à vos besoins. Nos applications sont en cours de validation finale et seront très bientôt disponibles sur vos plateformes sécurisées.
           </p>
           <h2 class="sr-only">Nos trois applications</h2>
           <div class="download-apps-grid">
@@ -483,6 +541,7 @@
               <a href="confidentialite.html">Politique de confidentialité</a>
               <a href="cookies.html">Politique relative aux cookies</a>
               <a href="mentions-legales.html">Mentions légales</a>
+              <a href="Suppression_Compte_Alfa.html">Suppression de compte</a>
               <button
                 type="button"
                 data-open-cookie-settings
@@ -747,7 +806,71 @@
       <script src="js/interactions.js" defer></script>
       <script src="js/form-handler.js" defer></script>
       
-      
+    <!-- Script Spécifique pour les Smart Links -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Détection de l'appareil
+        const userAgent =
+          navigator.userAgent || navigator.vendor || window.opera;
+        const isAndroid = /android/i.test(userAgent);
+        const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+        const smartBanner = document.getElementById("smart-banner");
+        if (isAndroid) {
+          smartBanner.innerHTML =
+            "Vous êtes sur Android. Téléchargez rapidement notre app sur Google Play ! <a href=\"#\" onclick=\"smartLink('client', 'android')\">Télécharger</a>";
+          smartBanner.style.display = "block";
+        } else if (isIOS) {
+          smartBanner.innerHTML =
+            "Vous êtes sur iOS. Notre application sera très bientôt disponible sur l'App Store.";
+          smartBanner.style.display = "block";
+          smartBanner.style.background = "#0F172A";
+        }
+      });
+      // Fonction de Smart Linking (Option 1 : Toast Notification "Teaser")
+      function smartLink(appType, platform) {
+        if(event) event.preventDefault();
+        
+        // 1. Vérifier si un toast existe déjà
+        let existingToast = document.getElementById("alfa-toast");
+        if (existingToast) {
+          existingToast.remove();
+        }
+
+        // 2. Créer l'élément de notification
+        const toast = document.createElement("div");
+        toast.id = "alfa-toast";
+        toast.className = "toast-notification";
+        
+        // 3. Ajouter l'icône et le texte poli
+        toast.innerHTML = `
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 4px;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>L'application alfa sera très bientôt disponible sur votre Store !<br><br>Suivez-nous sur les réseaux pour le lancement.</span>
+          <button class="toast-btn" id="toast-close-btn">OK</button>
+        `;
+        
+        // 4. L'insérer dans la page
+        document.body.appendChild(toast);
+        
+        // 5. Déclencher l'animation d'apparition
+        setTimeout(() => {
+          toast.classList.add("show");
+        }, 10);
+        
+        // 6. Gérer le clic sur le bouton OK pour fermer
+        document.getElementById("toast-close-btn").addEventListener("click", () => {
+          toast.classList.remove("show");
+          setTimeout(() => {
+            if(toast.parentNode) {
+              toast.remove();
+            }
+          }, 500); // attendre la fin de la transition
+        });
+      }
+    </script>
   
     <!-- GTranslate Script -->
     <script src="js/gtranslate.js"></script>

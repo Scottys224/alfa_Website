@@ -325,6 +325,7 @@
                     name="prenom"
                     class="form-control"
                     required
+                    maxlength="50"
                     placeholder="Ex: Ibrahima"
                   / autocomplete="given-name">
                 </div>
@@ -336,6 +337,7 @@
                     name="nom"
                     class="form-control"
                     required
+                    maxlength="50"
                     placeholder="Ex: Bah"
                   / autocomplete="family-name">
                 </div>
@@ -349,7 +351,9 @@
                     name="telephone"
                     class="form-control"
                     required
+                    maxlength="20"
                     placeholder="Ex: 620 00 00 00"
+                    oninput="this.value = this.value.replace(/[^0-9\s\+\-]/g, '');"
                   />
                 </div>
                 <div class="form-group">
@@ -360,6 +364,7 @@
                     name="ville"
                     class="form-control"
                     required
+                    maxlength="50"
                     placeholder="Ex: Conakry"
                   />
                 </div>
@@ -499,6 +504,7 @@
               <a href="confidentialite.html">Politique de confidentialité</a>
               <a href="cookies.html">Politique relative aux cookies</a>
               <a href="mentions-legales.html">Mentions légales</a>
+              <a href="Suppression_Compte_Alfa.html">Suppression de compte</a>
               <button
                 type="button"
                 data-open-cookie-settings
