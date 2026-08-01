@@ -17,7 +17,7 @@ const replaceStr = `              <summary>Comment contacter le support ?</summa
             <details class="faq-item">
               <summary>Comment supprimer un compte ?</summary>
               <p>
-                La suppression de compte et de vos données personnelles est accessible directement depuis les paramètres de votre application Alfa. Vous pouvez également en faire la demande par e-mail. Pour connaître la procédure détaillée, <a href="Suppression_Compte_Alfa.html" style="color: var(--color-primary); text-decoration: underline;">consultez notre page dédiée</a>.
+                La suppression de compte et de vos données personnelles est accessible directement depuis les paramètres de votre application alfa. Vous pouvez également en faire la demande par e-mail. Pour connaître la procédure détaillée, <a href="Suppression_Compte_Alfa.html" style="color: var(--color-primary); text-decoration: underline;">consultez notre page dédiée</a>.
               </p>
             </details>`;
 

@@ -5,52 +5,52 @@ const domain = 'https://www.alfa.com.gn';
 
 const pages = {
     'index.html': { 
-        title: "Alfa - Super-application de transport et livraison en Guinée", 
-        desc: "Commandez un chauffeur, de la nourriture ou envoyez des colis rapidement et en toute sécurité avec Alfa. La super-application n°1 en Guinée." 
+        title: "alfa - Super-application de transport et livraison en Guinée", 
+        desc: "Commandez un chauffeur, de la nourriture ou envoyez des colis rapidement et en toute sécurité avec alfa. La super-application n°1 en Guinée." 
     },
     'aide.html': { 
-        title: "Centre d'Aide Alfa - Support et FAQ", 
-        desc: "Besoin d'aide avec l'application Alfa ? Consultez notre centre d'aide, notre FAQ ou contactez le support client." 
+        title: "Centre d'Aide alfa - Support et FAQ", 
+        desc: "Besoin d'aide avec l'application alfa ? Consultez notre centre d'aide, notre FAQ ou contactez le support client." 
     },
     'cgu.html': { 
-        title: "Conditions Générales d'Utilisation - Alfa", 
-        desc: "Lisez les conditions générales d'utilisation des services Alfa (transport, livraison, nourriture)." 
+        title: "Conditions Générales d'Utilisation - alfa", 
+        desc: "Lisez les conditions générales d'utilisation des services alfa (transport, livraison, nourriture)." 
     },
     'chauffeur.html': { 
-        title: "Devenez Chauffeur Partenaire Alfa en Guinée", 
-        desc: "Gagnez de l'argent en conduisant avec Alfa. Inscrivez-vous comme chauffeur partenaire et gérez vos propres horaires." 
+        title: "Devenez Chauffeur Partenaire alfa en Guinée", 
+        desc: "Gagnez de l'argent en conduisant avec alfa. Inscrivez-vous comme chauffeur partenaire et gérez vos propres horaires." 
     },
     'commercant.html': { 
-        title: "Devenez Commerçant Partenaire Alfa", 
-        desc: "Augmentez vos ventes en rejoignant la plateforme Alfa. Proposez vos produits et plats à des milliers d'utilisateurs." 
+        title: "Devenez Commerçant Partenaire alfa", 
+        desc: "Augmentez vos ventes en rejoignant la plateforme alfa. Proposez vos produits et plats à des milliers d'utilisateurs." 
     },
     'confidentialite.html': { 
-        title: "Politique de Confidentialité - Alfa", 
-        desc: "Découvrez comment Alfa protège vos données personnelles et respecte votre vie privée en Guinée." 
+        title: "Politique de Confidentialité - alfa", 
+        desc: "Découvrez comment alfa protège vos données personnelles et respecte votre vie privée en Guinée." 
     },
     'contact.html': { 
-        title: "Contactez-nous - Alfa Guinée", 
-        desc: "Une question, une suggestion ou un partenariat ? Contactez l'équipe Alfa en Guinée via notre formulaire en ligne." 
+        title: "Contactez-nous - alfa Guinée", 
+        desc: "Une question, une suggestion ou un partenariat ? Contactez l'équipe alfa en Guinée via notre formulaire en ligne." 
     },
     'cookies.html': { 
-        title: "Politique des Cookies - Alfa", 
-        desc: "Informations sur l'utilisation des cookies par le site et l'application Alfa pour améliorer votre expérience." 
+        title: "Politique des Cookies - alfa", 
+        desc: "Informations sur l'utilisation des cookies par le site et l'application alfa pour améliorer votre expérience." 
     },
     'livraison.html': { 
-        title: "Livraison de Colis Express - Alfa", 
-        desc: "Faites livrer vos colis rapidement et en toute sécurité avec Alfa Livraison. Suivi en temps réel de votre coursier." 
+        title: "Livraison de Colis Express - alfa", 
+        desc: "Faites livrer vos colis rapidement et en toute sécurité avec alfa Livraison. Suivi en temps réel de votre coursier." 
     },
     'mentions-legales.html': { 
-        title: "Mentions Légales - Alfa", 
-        desc: "Consultez les mentions légales de la société Alfa, super-application de services en Guinée." 
+        title: "Mentions Légales - alfa", 
+        desc: "Consultez les mentions légales de la société alfa, super-application de services en Guinée." 
     },
     'nourriture.html': { 
-        title: "Livraison de Repas et Courses - Alfa Food", 
-        desc: "Commandez vos repas et courses en ligne. Alfa Food livre vos plats préférés rapidement à votre porte." 
+        title: "Livraison de Repas et Courses - alfa Food", 
+        desc: "Commandez vos repas et courses en ligne. alfa Food livre vos plats préférés rapidement à votre porte." 
     },
     'telechargement.html': { 
-        title: "Téléchargez l'Application Alfa - iOS et Android", 
-        desc: "Téléchargez l'application gratuite Alfa sur l'App Store ou Google Play pour accéder à tous nos services en Guinée." 
+        title: "Téléchargez l'Application alfa - iOS et Android", 
+        desc: "Téléchargez l'application gratuite alfa sur l'App Store ou Google Play pour accéder à tous nos services en Guinée." 
     }
 };
 
@@ -97,7 +97,7 @@ for (const [file, data] of Object.entries(pages)) {
     <meta property="og:description" content="${data.desc}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="${domain}/${file === 'index.html' ? '' : file}">
-    <meta property="og:site_name" content="Alfa">
+    <meta property="og:site_name" content="alfa">
     <meta property="og:image" content="${domain}/assets/og-image.jpg">`;
     
     content = content.replace(/(<meta\s+charset=["']utf-8["'][^>]*>)/i, `$1${seoBlock}`);
