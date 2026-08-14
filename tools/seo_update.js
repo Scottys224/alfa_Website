@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const domain = 'https://www.alfa.com.gn';
+const domain = 'https://alfaguinee.com';
 
 const pages = {
     'index.html': { 

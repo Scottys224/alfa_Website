@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.alfa.com.gn/sitemap.xml
+Sitemap: https://alfaguinee.com/sitemap.xml
