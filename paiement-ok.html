@@ -8,27 +8,28 @@
     <link rel="icon" type="image/jpeg" href="assets/images/alfa6.jpg">
     <meta
       name="description"
-      content="Consultez les mentions légales de la société alfa, super-application de services en Guinée."
+      content="Votre paiement a été transmis à notre opérateur. Le statut de votre commande est mis à jour automatiquement dans l'application alfa."
     />
     <link
       rel="canonical"
-      href="https://alfaguinee.com/mentions-legales.html"
+      href="https://alfaguinee.com/paiement-ok.html"
     />
-    <meta property="og:title" content="Mentions Légales - alfa" />
+    <meta property="og:title" content="Paiement transmis - alfa" />
     <meta
       property="og:description"
-      content="Consultez les mentions légales de la société alfa, super-application de services en Guinée."
+      content="Votre paiement a été transmis à notre opérateur. Le statut de votre commande est mis à jour automatiquement dans l'application alfa."
     />
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content="https://alfaguinee.com/mentions-legales.html"
+      content="https://alfaguinee.com/paiement-ok.html"
     />
     <meta property="og:site_name" content="alfa" />
     <meta
       property="og:image"
       content="https://alfaguinee.com/assets/og-image.jpg"
     />
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/fonts/fonts.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -114,6 +115,77 @@
     }
     </script>
     <link rel="preload" href="assets/fonts/font-7.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+      .paiement-retour {
+        padding-top: 140px;
+        padding-bottom: 80px;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+      .paiement-carte {
+        background: var(--color-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        padding: 48px 32px;
+        text-align: center;
+      }
+      .paiement-icone {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .paiement-icone--ok {
+        background: var(--color-primary-10);
+        color: var(--color-primary);
+      }
+      .paiement-icone--ko {
+        background: rgba(220, 38, 38, 0.1);
+        color: #dc2626;
+      }
+      .paiement-carte h1 {
+        font-size: clamp(1.75rem, 1.3rem + 2vw, 2.25rem);
+        text-wrap: balance;
+        margin-bottom: 16px;
+        color: var(--text-heading);
+      }
+      .paiement-message {
+        font-size: 1.125rem;
+        color: var(--text-main);
+        margin-bottom: 16px;
+      }
+      .paiement-detail {
+        color: var(--text-muted);
+        margin-bottom: 32px;
+      }
+      .paiement-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        margin-bottom: 32px;
+      }
+      .paiement-note {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        border-top: 1px solid var(--border-color);
+        padding-top: 24px;
+        margin-bottom: 0;
+      }
+      .paiement-note a {
+        color: var(--color-primary);
+        font-weight: 600;
+      }
+      @media (max-width: 480px) {
+        .paiement-carte {
+          padding: 32px 20px;
+        }
+      }
+    </style>
   </head>
   <body>
     <a href="#main-content" class="sr-only">Aller au contenu principal</a>
@@ -205,29 +277,34 @@
       </div>
     </header>
     <main id="main-content">
-      <section class="container legal-content">
-        <h1>Mentions Légales</h1>
-        <h2>Éditeur du site</h2>
-        <p>
-          <strong>alfa SARLU</strong><br />Société à Responsabilité Limitée
-          (SARLU)<br />Capital social : 10 000 000 GNF<br />
-          RCCM : GN.TCC.2026.B.12085<br />
-          Siège social : Lambanyi, près des écoles Les Écureuils, commune de Lambanyi, Conakry, République de Guinée<br />
-          Directeur de la publication : Mr Diallo Ousmane<br />
-          Email : alfa6ams@gmail.com
-        </p>
-        <h2>Hébergement</h2>
-        <p>
-          Le site est hébergé par : CLOUDFLARE<br />
-          Adresse : Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis<br />
-          Le site bénéficie de l'infrastructure de diffusion et de sécurité de Cloudflare afin d'améliorer sa disponibilité et ses performances.
-        </p>
-        <h2>Propriété intellectuelle</h2>
-        <p>
-          L'ensemble de ce site et des applications alfa relève de la
-          législation sur le droit d'auteur et la propriété intellectuelle. Tous
-          les droits de reproduction sont réservés.
-        </p>
+      <section class="container paiement-retour">
+        <div class="paiement-carte">
+          <div class="paiement-icone paiement-icone--ok" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          <h1>Paiement transmis</h1>
+          <p class="paiement-message">
+            Merci, votre paiement a bien été transmis à notre opérateur.
+          </p>
+          <p class="paiement-detail">
+            Vous pouvez revenir à l'application alfa : le statut de votre
+            commande y est mis à jour automatiquement dès que l'opérateur
+            confirme définitivement la transaction, en général en moins d'une
+            minute.
+          </p>
+          <div class="paiement-actions">
+            <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+            <a href="aide.html" class="btn btn-outline">Besoin d'aide ?</a>
+          </div>
+          <p class="paiement-note">
+            Ne relancez pas le paiement depuis cette page. Si le statut de votre
+            commande ne change pas dans l'application, contactez-nous au
+            <a href="tel:+224614878886">614 87 88 86</a> : chaque transaction est
+            enregistrée dans notre registre et vérifiable.
+          </p>
+        </div>
       </section>
     </main>
     <footer class="footer">
